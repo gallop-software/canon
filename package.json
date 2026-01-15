@@ -1,11 +1,9 @@
 {
   "name": "gallop",
   "private": true,
-  "description": "Gallop packages - Architecture patterns, ESLint plugin, and CLI for template governance",
+  "description": "Gallop Canon - Architecture patterns, ESLint plugin, and CLI for template governance",
   "workspaces": [
-    "canon",
-    "eslint-plugin",
-    "cli"
+    "canon"
   ],
   "scripts": {
     "build": "npm run build --workspaces",
