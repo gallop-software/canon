@@ -1,0 +1,41 @@
+{
+  "name": "@gallop/canon",
+  "version": "1.0.0",
+  "description": "Gallop Enterprise Architecture Canon - Versioned, AI-compatible, auditable web architecture patterns",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "patterns",
+    "guarantees.md",
+    "schema.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "gallop",
+    "architecture",
+    "patterns",
+    "canon",
+    "nextjs",
+    "react",
+    "governance",
+    "ai-compatible"
+  ],
+  "author": {
+    "name": "Gallop",
+    "url": "https://gallop.software"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gallop-software/gallop",
+    "directory": "canon"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

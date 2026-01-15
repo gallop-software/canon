@@ -1,0 +1,43 @@
+{
+  "name": "@gallop/cli",
+  "version": "1.0.0",
+  "description": "Gallop CLI - Canon compliance auditing and tooling",
+  "bin": {
+    "gallop": "./dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "gallop",
+    "canon",
+    "audit",
+    "eslint",
+    "cli",
+    "architecture"
+  ],
+  "author": {
+    "name": "Gallop",
+    "url": "https://gallop.software"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gallop-software/gallop",
+    "directory": "cli"
+  },
+  "dependencies": {
+    "@gallop/canon": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

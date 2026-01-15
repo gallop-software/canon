@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Gallop Canon",
+  "version": "1.0.0",
+  "description": "Gallop Enterprise Architecture Canon - Versioned, AI-compatible, auditable web architecture patterns",
+  "categories": [
+    {
+      "id": "rendering",
+      "name": "Rendering",
+      "description": "Server/client component boundaries and rendering strategies"
+    },
+    {
+      "id": "layout",
+      "name": "Layout",
+      "description": "Layout hierarchy, spacing, and responsive design"
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "description": "Text component usage and styling"
+    },
+    {
+      "id": "structure",
+      "name": "Structure",
+      "description": "File and folder organization patterns"
+    },
+    {
+      "id": "styling",
+      "name": "Styling",
+      "description": "CSS, Tailwind, and visual styling patterns"
+    },
+    {
+      "id": "components",
+      "name": "Components",
+      "description": "Component design and implementation patterns"
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "description": "Search engine optimization and metadata patterns"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "001",
+      "title": "Server-First Blocks",
+      "file": "patterns/001-server-first-blocks.md",
+      "category": "rendering",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-client-blocks",
+      "summary": "Blocks must be server components"
+    },
+    {
+      "id": "002",
+      "title": "Layout Hierarchy",
+      "file": "patterns/002-layout-hierarchy.md",
+      "category": "layout",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-container-in-section",
+      "summary": "No Container inside Section"
+    },
+    {
+      "id": "003",
+      "title": "Typography Components",
+      "file": "patterns/003-typography-components.md",
+      "category": "typography",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/prefer-typography-components",
+      "summary": "Use Paragraph/Span, not raw tags"
+    },
+    {
+      "id": "004",
+      "title": "Component Props",
+      "file": "patterns/004-component-props.md",
+      "category": "typography",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/prefer-component-props",
+      "summary": "Use props over className for supported styles"
+    },
+    {
+      "id": "005",
+      "title": "Page Structure",
+      "file": "patterns/005-page-structure.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "PageWrapper, generatePageMetadata pattern"
+    },
+    {
+      "id": "006",
+      "title": "Block Naming",
+      "file": "patterns/006-block-naming.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "{type}-{n}.tsx naming, PascalCase exports"
+    },
+    {
+      "id": "007",
+      "title": "Import Paths",
+      "file": "patterns/007-import-paths.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "@/ aliases, destructured imports"
+    },
+    {
+      "id": "008",
+      "title": "Tailwind Only",
+      "file": "patterns/008-tailwind-only.md",
+      "category": "styling",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "No inline styles, use Tailwind exclusively"
+    },
+    {
+      "id": "009",
+      "title": "Color Tokens",
+      "file": "patterns/009-color-tokens.md",
+      "category": "styling",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Use semantic color tokens"
+    },
+    {
+      "id": "010",
+      "title": "Spacing System",
+      "file": "patterns/010-spacing-system.md",
+      "category": "layout",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Standard padding/margin values"
+    },
+    {
+      "id": "011",
+      "title": "Responsive Mobile-First",
+      "file": "patterns/011-responsive-mobile-first.md",
+      "category": "layout",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "sm/md/lg/xl breakpoint usage"
+    },
+    {
+      "id": "012",
+      "title": "Icon System",
+      "file": "patterns/012-icon-system.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Iconify with Icon component"
+    },
+    {
+      "id": "013",
+      "title": "New Component Pattern",
+      "file": "patterns/013-new-component-pattern.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Props for margin/color/fontSize"
+    },
+    {
+      "id": "014",
+      "title": "clsx Not classnames",
+      "file": "patterns/014-clsx-not-classnames.md",
+      "category": "styling",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Use clsx, never classnames package"
+    },
+    {
+      "id": "015",
+      "title": "No Inline Hover Styles",
+      "file": "patterns/015-no-inline-hover-styles.md",
+      "category": "styling",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Tailwind for hover states"
+    },
+    {
+      "id": "016",
+      "title": "Client Extraction",
+      "file": "patterns/016-client-extraction.md",
+      "category": "rendering",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "Extract hooks to components, not blocks (see Pattern 001 for enforcement)"
+    },
+    {
+      "id": "017",
+      "title": "SEO Metadata",
+      "file": "patterns/017-seo-metadata.md",
+      "category": "seo",
+      "status": "stable",
+      "enforcement": "documentation",
+      "rule": null,
+      "summary": "PageMetadata structure, structured data"
+    }
+  ],
+  "guarantees": [
+    {
+      "id": "SEO_STABLE",
+      "name": "SEO Stability",
+      "since": "1.0.0",
+      "status": "stable",
+      "patterns": ["001", "016", "017"]
+    },
+    {
+      "id": "PERF_BASELINE",
+      "name": "Performance Baseline",
+      "since": "1.0.0",
+      "status": "stable",
+      "patterns": ["001", "007", "010", "016"]
+    },
+    {
+      "id": "MAINTAIN",
+      "name": "Maintainability",
+      "since": "1.0.0",
+      "status": "stable",
+      "patterns": ["004", "005", "006", "007", "013"]
+    },
+    {
+      "id": "DESIGN_SYSTEM",
+      "name": "Design System Compliance",
+      "since": "1.0.0",
+      "status": "stable",
+      "patterns": ["003", "004", "009", "010", "011"]
+    }
+  ]
+}
