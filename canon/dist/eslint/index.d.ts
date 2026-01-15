@@ -15,26 +15,19 @@ declare const plugin: {
         };
         'prefer-typography-components': import("eslint").Rule.RuleModule;
         'prefer-layout-components': import("eslint").Rule.RuleModule;
+        'background-image-rounded': import("eslint").Rule.RuleModule;
     };
-    configs: {
-        speedwell: {
-            plugins: string[];
-            rules: {
-                'gallop/no-client-blocks': string;
-                'gallop/no-container-in-section': string;
-                'gallop/prefer-component-props': string;
-                'gallop/prefer-layout-components': string;
-            };
-        };
-        recommended: {
-            plugins: string[];
-            rules: {
-                'gallop/no-client-blocks': string;
-                'gallop/no-container-in-section': string;
-                'gallop/prefer-component-props': string;
-                'gallop/prefer-layout-components': string;
-            };
-        };
+    /**
+     * Recommended rule configurations - spread into your ESLint config
+     * @example rules: { ...gallop.recommended }
+     */
+    recommended: {
+        readonly 'gallop/no-client-blocks': "warn";
+        readonly 'gallop/no-container-in-section': "warn";
+        readonly 'gallop/prefer-component-props': "warn";
+        readonly 'gallop/prefer-typography-components': "warn";
+        readonly 'gallop/prefer-layout-components': "warn";
+        readonly 'gallop/background-image-rounded': "warn";
     };
 };
 export default plugin;

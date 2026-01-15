@@ -1,19 +1,20 @@
 /**
- * Speedwell template configuration
+ * Speedwell template configuration for ESLint flat config
  * Enables all Gallop rules relevant to the Speedwell architecture
  */
-const speedwellConfig = {
-    plugins: ['gallop'],
-    rules: {
-        // Blocks should be server components - extract client logic to components
-        'gallop/no-client-blocks': 'warn',
-        // Section already provides containment
-        'gallop/no-container-in-section': 'warn',
-        // Use component props instead of className for style values
-        'gallop/prefer-component-props': 'warn',
-        // Use Grid/Columns instead of raw div with grid classes
-        'gallop/prefer-layout-components': 'warn',
-    },
+const speedwellRules = {
+    // Blocks should be server components - extract client logic to components
+    'gallop/no-client-blocks': 'warn',
+    // Section already provides containment
+    'gallop/no-container-in-section': 'warn',
+    // Use component props instead of className for style values
+    'gallop/prefer-component-props': 'warn',
+    // Use Typography components instead of raw p/span tags
+    'gallop/prefer-typography-components': 'warn',
+    // Use Grid/Columns instead of raw div with grid classes
+    'gallop/prefer-layout-components': 'warn',
+    // Background images must have rounded="rounded-none"
+    'gallop/background-image-rounded': 'warn',
 };
-export default speedwellConfig;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3BlZWR3ZWxsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2VzbGludC9jb25maWdzL3NwZWVkd2VsbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFDSCxNQUFNLGVBQWUsR0FBRztJQUN0QixPQUFPLEVBQUUsQ0FBQyxRQUFRLENBQUM7SUFDbkIsS0FBSyxFQUFFO1FBQ0wsMEVBQTBFO1FBQzFFLHlCQUF5QixFQUFFLE1BQU07UUFFakMsdUNBQXVDO1FBQ3ZDLGdDQUFnQyxFQUFFLE1BQU07UUFFeEMsNERBQTREO1FBQzVELCtCQUErQixFQUFFLE1BQU07UUFFdkMsd0RBQXdEO1FBQ3hELGlDQUFpQyxFQUFFLE1BQU07S0FDMUM7Q0FDRixDQUFBO0FBRUQsZUFBZSxlQUFlLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFNwZWVkd2VsbCB0ZW1wbGF0ZSBjb25maWd1cmF0aW9uXG4gKiBFbmFibGVzIGFsbCBHYWxsb3AgcnVsZXMgcmVsZXZhbnQgdG8gdGhlIFNwZWVkd2VsbCBhcmNoaXRlY3R1cmVcbiAqL1xuY29uc3Qgc3BlZWR3ZWxsQ29uZmlnID0ge1xuICBwbHVnaW5zOiBbJ2dhbGxvcCddLFxuICBydWxlczoge1xuICAgIC8vIEJsb2NrcyBzaG91bGQgYmUgc2VydmVyIGNvbXBvbmVudHMgLSBleHRyYWN0IGNsaWVudCBsb2dpYyB0byBjb21wb25lbnRzXG4gICAgJ2dhbGxvcC9uby1jbGllbnQtYmxvY2tzJzogJ3dhcm4nLFxuXG4gICAgLy8gU2VjdGlvbiBhbHJlYWR5IHByb3ZpZGVzIGNvbnRhaW5tZW50XG4gICAgJ2dhbGxvcC9uby1jb250YWluZXItaW4tc2VjdGlvbic6ICd3YXJuJyxcblxuICAgIC8vIFVzZSBjb21wb25lbnQgcHJvcHMgaW5zdGVhZCBvZiBjbGFzc05hbWUgZm9yIHN0eWxlIHZhbHVlc1xuICAgICdnYWxsb3AvcHJlZmVyLWNvbXBvbmVudC1wcm9wcyc6ICd3YXJuJyxcblxuICAgIC8vIFVzZSBHcmlkL0NvbHVtbnMgaW5zdGVhZCBvZiByYXcgZGl2IHdpdGggZ3JpZCBjbGFzc2VzXG4gICAgJ2dhbGxvcC9wcmVmZXItbGF5b3V0LWNvbXBvbmVudHMnOiAnd2FybicsXG4gIH0sXG59XG5cbmV4cG9ydCBkZWZhdWx0IHNwZWVkd2VsbENvbmZpZ1xuIl19
+export default speedwellRules;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3BlZWR3ZWxsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2VzbGludC9jb25maWdzL3NwZWVkd2VsbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFDSCxNQUFNLGNBQWMsR0FBRztJQUNyQiwwRUFBMEU7SUFDMUUseUJBQXlCLEVBQUUsTUFBTTtJQUVqQyx1Q0FBdUM7SUFDdkMsZ0NBQWdDLEVBQUUsTUFBTTtJQUV4Qyw0REFBNEQ7SUFDNUQsK0JBQStCLEVBQUUsTUFBTTtJQUV2Qyx1REFBdUQ7SUFDdkQscUNBQXFDLEVBQUUsTUFBTTtJQUU3Qyx3REFBd0Q7SUFDeEQsaUNBQWlDLEVBQUUsTUFBTTtJQUV6QyxxREFBcUQ7SUFDckQsaUNBQWlDLEVBQUUsTUFBTTtDQUNqQyxDQUFBO0FBRVYsZUFBZSxjQUFjLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFNwZWVkd2VsbCB0ZW1wbGF0ZSBjb25maWd1cmF0aW9uIGZvciBFU0xpbnQgZmxhdCBjb25maWdcbiAqIEVuYWJsZXMgYWxsIEdhbGxvcCBydWxlcyByZWxldmFudCB0byB0aGUgU3BlZWR3ZWxsIGFyY2hpdGVjdHVyZVxuICovXG5jb25zdCBzcGVlZHdlbGxSdWxlcyA9IHtcbiAgLy8gQmxvY2tzIHNob3VsZCBiZSBzZXJ2ZXIgY29tcG9uZW50cyAtIGV4dHJhY3QgY2xpZW50IGxvZ2ljIHRvIGNvbXBvbmVudHNcbiAgJ2dhbGxvcC9uby1jbGllbnQtYmxvY2tzJzogJ3dhcm4nLFxuXG4gIC8vIFNlY3Rpb24gYWxyZWFkeSBwcm92aWRlcyBjb250YWlubWVudFxuICAnZ2FsbG9wL25vLWNvbnRhaW5lci1pbi1zZWN0aW9uJzogJ3dhcm4nLFxuXG4gIC8vIFVzZSBjb21wb25lbnQgcHJvcHMgaW5zdGVhZCBvZiBjbGFzc05hbWUgZm9yIHN0eWxlIHZhbHVlc1xuICAnZ2FsbG9wL3ByZWZlci1jb21wb25lbnQtcHJvcHMnOiAnd2FybicsXG5cbiAgLy8gVXNlIFR5cG9ncmFwaHkgY29tcG9uZW50cyBpbnN0ZWFkIG9mIHJhdyBwL3NwYW4gdGFnc1xuICAnZ2FsbG9wL3ByZWZlci10eXBvZ3JhcGh5LWNvbXBvbmVudHMnOiAnd2FybicsXG5cbiAgLy8gVXNlIEdyaWQvQ29sdW1ucyBpbnN0ZWFkIG9mIHJhdyBkaXYgd2l0aCBncmlkIGNsYXNzZXNcbiAgJ2dhbGxvcC9wcmVmZXItbGF5b3V0LWNvbXBvbmVudHMnOiAnd2FybicsXG5cbiAgLy8gQmFja2dyb3VuZCBpbWFnZXMgbXVzdCBoYXZlIHJvdW5kZWQ9XCJyb3VuZGVkLW5vbmVcIlxuICAnZ2FsbG9wL2JhY2tncm91bmQtaW1hZ2Utcm91bmRlZCc6ICd3YXJuJyxcbn0gYXMgY29uc3RcblxuZXhwb3J0IGRlZmF1bHQgc3BlZWR3ZWxsUnVsZXNcbiJdfQ==

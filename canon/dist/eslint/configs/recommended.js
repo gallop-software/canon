@@ -1,16 +1,20 @@
 /**
- * Recommended configuration
+ * Recommended configuration for ESLint flat config
  * A sensible default for any Gallop-based template
  */
-const recommendedConfig = {
-    plugins: ['gallop'],
-    rules: {
-        // Core rules that apply to most templates
-        'gallop/no-client-blocks': 'warn',
-        'gallop/no-container-in-section': 'warn',
-        'gallop/prefer-component-props': 'warn',
-        'gallop/prefer-layout-components': 'warn',
-    },
+const recommendedRules = {
+    // Blocks should be server components
+    'gallop/no-client-blocks': 'warn',
+    // Section already provides containment
+    'gallop/no-container-in-section': 'warn',
+    // Use component props instead of className for style values
+    'gallop/prefer-component-props': 'warn',
+    // Use Typography components instead of raw p/span tags
+    'gallop/prefer-typography-components': 'warn',
+    // Use Grid/Columns instead of raw div with grid classes
+    'gallop/prefer-layout-components': 'warn',
+    // Background images must have rounded="rounded-none"
+    'gallop/background-image-rounded': 'warn',
 };
-export default recommendedConfig;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVjb21tZW5kZWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvZXNsaW50L2NvbmZpZ3MvcmVjb21tZW5kZWQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztHQUdHO0FBQ0gsTUFBTSxpQkFBaUIsR0FBRztJQUN4QixPQUFPLEVBQUUsQ0FBQyxRQUFRLENBQUM7SUFDbkIsS0FBSyxFQUFFO1FBQ0wsMENBQTBDO1FBQzFDLHlCQUF5QixFQUFFLE1BQU07UUFDakMsZ0NBQWdDLEVBQUUsTUFBTTtRQUN4QywrQkFBK0IsRUFBRSxNQUFNO1FBQ3ZDLGlDQUFpQyxFQUFFLE1BQU07S0FDMUM7Q0FDRixDQUFBO0FBRUQsZUFBZSxpQkFBaUIsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogUmVjb21tZW5kZWQgY29uZmlndXJhdGlvblxuICogQSBzZW5zaWJsZSBkZWZhdWx0IGZvciBhbnkgR2FsbG9wLWJhc2VkIHRlbXBsYXRlXG4gKi9cbmNvbnN0IHJlY29tbWVuZGVkQ29uZmlnID0ge1xuICBwbHVnaW5zOiBbJ2dhbGxvcCddLFxuICBydWxlczoge1xuICAgIC8vIENvcmUgcnVsZXMgdGhhdCBhcHBseSB0byBtb3N0IHRlbXBsYXRlc1xuICAgICdnYWxsb3Avbm8tY2xpZW50LWJsb2Nrcyc6ICd3YXJuJyxcbiAgICAnZ2FsbG9wL25vLWNvbnRhaW5lci1pbi1zZWN0aW9uJzogJ3dhcm4nLFxuICAgICdnYWxsb3AvcHJlZmVyLWNvbXBvbmVudC1wcm9wcyc6ICd3YXJuJyxcbiAgICAnZ2FsbG9wL3ByZWZlci1sYXlvdXQtY29tcG9uZW50cyc6ICd3YXJuJyxcbiAgfSxcbn1cblxuZXhwb3J0IGRlZmF1bHQgcmVjb21tZW5kZWRDb25maWdcbiJdfQ==
+export default recommendedRules;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVjb21tZW5kZWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvZXNsaW50L2NvbmZpZ3MvcmVjb21tZW5kZWQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztHQUdHO0FBQ0gsTUFBTSxnQkFBZ0IsR0FBRztJQUN2QixxQ0FBcUM7SUFDckMseUJBQXlCLEVBQUUsTUFBTTtJQUVqQyx1Q0FBdUM7SUFDdkMsZ0NBQWdDLEVBQUUsTUFBTTtJQUV4Qyw0REFBNEQ7SUFDNUQsK0JBQStCLEVBQUUsTUFBTTtJQUV2Qyx1REFBdUQ7SUFDdkQscUNBQXFDLEVBQUUsTUFBTTtJQUU3Qyx3REFBd0Q7SUFDeEQsaUNBQWlDLEVBQUUsTUFBTTtJQUV6QyxxREFBcUQ7SUFDckQsaUNBQWlDLEVBQUUsTUFBTTtDQUNqQyxDQUFBO0FBRVYsZUFBZSxnQkFBZ0IsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogUmVjb21tZW5kZWQgY29uZmlndXJhdGlvbiBmb3IgRVNMaW50IGZsYXQgY29uZmlnXG4gKiBBIHNlbnNpYmxlIGRlZmF1bHQgZm9yIGFueSBHYWxsb3AtYmFzZWQgdGVtcGxhdGVcbiAqL1xuY29uc3QgcmVjb21tZW5kZWRSdWxlcyA9IHtcbiAgLy8gQmxvY2tzIHNob3VsZCBiZSBzZXJ2ZXIgY29tcG9uZW50c1xuICAnZ2FsbG9wL25vLWNsaWVudC1ibG9ja3MnOiAnd2FybicsXG5cbiAgLy8gU2VjdGlvbiBhbHJlYWR5IHByb3ZpZGVzIGNvbnRhaW5tZW50XG4gICdnYWxsb3Avbm8tY29udGFpbmVyLWluLXNlY3Rpb24nOiAnd2FybicsXG5cbiAgLy8gVXNlIGNvbXBvbmVudCBwcm9wcyBpbnN0ZWFkIG9mIGNsYXNzTmFtZSBmb3Igc3R5bGUgdmFsdWVzXG4gICdnYWxsb3AvcHJlZmVyLWNvbXBvbmVudC1wcm9wcyc6ICd3YXJuJyxcblxuICAvLyBVc2UgVHlwb2dyYXBoeSBjb21wb25lbnRzIGluc3RlYWQgb2YgcmF3IHAvc3BhbiB0YWdzXG4gICdnYWxsb3AvcHJlZmVyLXR5cG9ncmFwaHktY29tcG9uZW50cyc6ICd3YXJuJyxcblxuICAvLyBVc2UgR3JpZC9Db2x1bW5zIGluc3RlYWQgb2YgcmF3IGRpdiB3aXRoIGdyaWQgY2xhc3Nlc1xuICAnZ2FsbG9wL3ByZWZlci1sYXlvdXQtY29tcG9uZW50cyc6ICd3YXJuJyxcblxuICAvLyBCYWNrZ3JvdW5kIGltYWdlcyBtdXN0IGhhdmUgcm91bmRlZD1cInJvdW5kZWQtbm9uZVwiXG4gICdnYWxsb3AvYmFja2dyb3VuZC1pbWFnZS1yb3VuZGVkJzogJ3dhcm4nLFxufSBhcyBjb25zdFxuXG5leHBvcnQgZGVmYXVsdCByZWNvbW1lbmRlZFJ1bGVzXG4iXX0=

@@ -1,16 +1,25 @@
 /**
- * Recommended configuration
+ * Recommended configuration for ESLint flat config
  * A sensible default for any Gallop-based template
  */
-const recommendedConfig = {
-  plugins: ['gallop'],
-  rules: {
-    // Core rules that apply to most templates
-    'gallop/no-client-blocks': 'warn',
-    'gallop/no-container-in-section': 'warn',
-    'gallop/prefer-component-props': 'warn',
-    'gallop/prefer-layout-components': 'warn',
-  },
-}
+const recommendedRules = {
+  // Blocks should be server components
+  'gallop/no-client-blocks': 'warn',
 
-export default recommendedConfig
+  // Section already provides containment
+  'gallop/no-container-in-section': 'warn',
+
+  // Use component props instead of className for style values
+  'gallop/prefer-component-props': 'warn',
+
+  // Use Typography components instead of raw p/span tags
+  'gallop/prefer-typography-components': 'warn',
+
+  // Use Grid/Columns instead of raw div with grid classes
+  'gallop/prefer-layout-components': 'warn',
+
+  // Background images must have rounded="rounded-none"
+  'gallop/background-image-rounded': 'warn',
+} as const
+
+export default recommendedRules
