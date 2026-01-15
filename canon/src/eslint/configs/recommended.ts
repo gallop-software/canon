@@ -9,6 +9,7 @@ const recommendedConfig = {
     'gallop/no-client-blocks': 'warn',
     'gallop/no-container-in-section': 'warn',
     'gallop/prefer-component-props': 'warn',
+    'gallop/prefer-layout-components': 'warn',
   },
 }
 

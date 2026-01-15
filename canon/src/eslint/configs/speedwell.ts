@@ -13,6 +13,9 @@ const speedwellConfig = {
 
     // Use component props instead of className for style values
     'gallop/prefer-component-props': 'warn',
+
+    // Use Grid/Columns instead of raw div with grid classes
+    'gallop/prefer-layout-components': 'warn',
   },
 }
 

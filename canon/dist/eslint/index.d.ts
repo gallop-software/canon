@@ -14,6 +14,7 @@ declare const plugin: {
             name: string;
         };
         'prefer-typography-components': import("eslint").Rule.RuleModule;
+        'prefer-layout-components': import("eslint").Rule.RuleModule;
     };
     configs: {
         speedwell: {
@@ -22,6 +23,7 @@ declare const plugin: {
                 'gallop/no-client-blocks': string;
                 'gallop/no-container-in-section': string;
                 'gallop/prefer-component-props': string;
+                'gallop/prefer-layout-components': string;
             };
         };
         recommended: {
@@ -30,6 +32,7 @@ declare const plugin: {
                 'gallop/no-client-blocks': string;
                 'gallop/no-container-in-section': string;
                 'gallop/prefer-component-props': string;
+                'gallop/prefer-layout-components': string;
             };
         };
     };

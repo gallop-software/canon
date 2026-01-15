@@ -210,6 +210,16 @@
       "enforcement": "documentation",
       "rule": null,
       "summary": "PageMetadata structure, structured data"
+    },
+    {
+      "id": "018",
+      "title": "Layout Components",
+      "file": "patterns/018-layout-components.md",
+      "category": "layout",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/prefer-layout-components",
+      "summary": "Use Grid/Columns, not raw div with grid"
     }
   ],
   "guarantees": [
@@ -239,7 +249,7 @@
       "name": "Design System Compliance",
       "since": "1.0.0",
       "status": "stable",
-      "patterns": ["003", "004", "009", "010", "011"]
+      "patterns": ["003", "004", "009", "010", "011", "018"]
     }
   ]
 }

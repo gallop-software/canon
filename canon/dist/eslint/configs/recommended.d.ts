@@ -8,6 +8,7 @@ declare const recommendedConfig: {
         'gallop/no-client-blocks': string;
         'gallop/no-container-in-section': string;
         'gallop/prefer-component-props': string;
+        'gallop/prefer-layout-components': string;
     };
 };
 export default recommendedConfig;

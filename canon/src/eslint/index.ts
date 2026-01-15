@@ -2,6 +2,7 @@ import noClientBlocks from './rules/no-client-blocks.js'
 import noContainerInSection from './rules/no-container-in-section.js'
 import preferComponentProps from './rules/prefer-component-props.js'
 import preferTypographyComponents from './rules/prefer-typography-components.js'
+import preferLayoutComponents from './rules/prefer-layout-components.js'
 import speedwellConfig from './configs/speedwell.js'
 import recommendedConfig from './configs/recommended.js'
 
@@ -15,6 +16,7 @@ const plugin = {
     'no-container-in-section': noContainerInSection,
     'prefer-component-props': preferComponentProps,
     'prefer-typography-components': preferTypographyComponents,
+    'prefer-layout-components': preferLayoutComponents,
   },
   configs: {
     speedwell: speedwellConfig,
