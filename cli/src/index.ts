@@ -2,7 +2,7 @@
 
 import { audit } from './commands/audit'
 import { generate } from './commands/generate'
-import { version } from '@gallop/canon'
+import { version } from '@gallop.software/canon'
 
 const args = process.argv.slice(2)
 const command = args[0]

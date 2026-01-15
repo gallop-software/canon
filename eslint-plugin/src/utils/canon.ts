@@ -1,4 +1,4 @@
-import { patterns, type Pattern } from '@gallop/canon'
+import { patterns, type Pattern } from '@gallop.software/canon'
 
 // Build a lookup map from rule name to pattern
 const ruleToPatternMap = new Map<string, Pattern>()

@@ -1,5 +1,5 @@
 import { spawn } from 'child_process'
-import { version, patterns, getPattern } from '@gallop/canon'
+import { version, patterns, getPattern } from '@gallop.software/canon'
 
 interface AuditOptions {
   strict: boolean

@@ -1,5 +1,5 @@
 {
-  "name": "@gallop/canon",
+  "name": "@gallop.software/canon",
   "version": "1.0.0",
   "description": "Gallop Enterprise Architecture Canon - Versioned, AI-compatible, auditable web architecture patterns",
   "main": "dist/index.js",

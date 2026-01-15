@@ -6,14 +6,14 @@ Architecture patterns, ESLint plugin, and CLI for Gallop template governance.
 
 | Package | Description |
 |---------|-------------|
-| [@gallop/canon](./canon) | Versioned architecture patterns and guarantees |
-| [@gallop/eslint-plugin](./eslint-plugin) | ESLint rules enforcing Canon patterns |
-| [@gallop/cli](./cli) | CLI for auditing and generating AI rules |
+| [@gallop.software/canon](./canon) | Versioned architecture patterns and guarantees |
+| [@gallop.software/eslint-plugin](./eslint-plugin) | ESLint rules enforcing Canon patterns |
+| [@gallop.software/cli](./cli) | CLI for auditing and generating AI rules |
 
 ## Installation
 
 ```bash
-npm install -D @gallop/eslint-plugin
+npm install -D @gallop.software/eslint-plugin
 ```
 
 ## Usage

@@ -1,5 +1,5 @@
 {
-  "name": "@gallop/cli",
+  "name": "@gallop.software/cli",
   "version": "1.0.0",
   "description": "Gallop CLI - Canon compliance auditing and tooling",
   "bin": {
@@ -34,7 +34,7 @@
     "directory": "cli"
   },
   "dependencies": {
-    "@gallop/canon": "^1.0.0"
+    "@gallop.software/canon": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -1,4 +1,4 @@
-import { type Pattern } from '@gallop/canon';
+import { type Pattern } from '@gallop.software/canon';
 /**
  * Get Canon pattern info for an ESLint rule
  */

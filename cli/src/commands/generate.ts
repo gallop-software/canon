@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { version, patterns, categories, guarantees } from '@gallop/canon'
+import { version, patterns, categories, guarantees } from '@gallop.software/canon'
 
 interface GenerateOptions {
   output: string
@@ -14,7 +14,7 @@ function readPatternFile(patternFile: string): string | null {
   // Try to find the canon package patterns directory
   const possiblePaths = [
     path.join(process.cwd(), 'packages/canon', patternFile),
-    path.join(process.cwd(), 'node_modules/@gallop/canon', patternFile),
+    path.join(process.cwd(), 'node_modules/@gallop.software/canon', patternFile),
   ]
 
   for (const filePath of possiblePaths) {
