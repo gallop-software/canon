@@ -1,5 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/utils'
-import { getCanonUrl, getCanonPattern } from '../utils/canon'
+import { getCanonUrl, getCanonPattern } from '../utils/canon.js'
 
 const RULE_NAME = 'no-client-blocks'
 const pattern = getCanonPattern(RULE_NAME)

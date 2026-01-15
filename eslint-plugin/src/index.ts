@@ -1,14 +1,14 @@
-import noClientBlocks from './rules/no-client-blocks'
-import noContainerInSection from './rules/no-container-in-section'
-import preferComponentProps from './rules/prefer-component-props'
-import preferTypographyComponents from './rules/prefer-typography-components'
-import speedwellConfig from './configs/speedwell'
-import recommendedConfig from './configs/recommended'
+import noClientBlocks from './rules/no-client-blocks.js'
+import noContainerInSection from './rules/no-container-in-section.js'
+import preferComponentProps from './rules/prefer-component-props.js'
+import preferTypographyComponents from './rules/prefer-typography-components.js'
+import speedwellConfig from './configs/speedwell.js'
+import recommendedConfig from './configs/recommended.js'
 
 const plugin = {
   meta: {
     name: 'eslint-plugin-gallop',
-    version: '0.1.0',
+    version: '1.0.1',
   },
   rules: {
     'no-client-blocks': noClientBlocks,

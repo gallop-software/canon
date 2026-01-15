@@ -1,5 +1,5 @@
 import { ESLintUtils, TSESTree } from '@typescript-eslint/utils'
-import { getCanonUrl, getCanonPattern } from '../utils/canon'
+import { getCanonUrl, getCanonPattern } from '../utils/canon.js'
 
 const RULE_NAME = 'prefer-component-props'
 const pattern = getCanonPattern(RULE_NAME)

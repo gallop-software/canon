@@ -1,9 +1,16 @@
 {
   "name": "@gallop.software/eslint-plugin",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "type": "module",
   "description": "ESLint plugin for Gallop template governance - enforce coding conventions and architectural patterns",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],

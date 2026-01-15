@@ -1,5 +1,5 @@
 import type { Rule } from 'eslint'
-import { getCanonUrl, getCanonPattern } from '../utils/canon'
+import { getCanonUrl, getCanonPattern } from '../utils/canon.js'
 
 const RULE_NAME = 'prefer-typography-components'
 const pattern = getCanonPattern(RULE_NAME)
