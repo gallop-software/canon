@@ -1,9 +1,23 @@
 {
   "name": "@gallop.software/canon",
-  "version": "1.0.0",
-  "description": "Gallop Enterprise Architecture Canon - Versioned, AI-compatible, auditable web architecture patterns",
+  "version": "2.0.1",
+  "type": "module",
+  "description": "Gallop Canon - Architecture patterns, ESLint plugin, and CLI for template governance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./eslint": {
+      "types": "./dist/eslint/index.d.ts",
+      "import": "./dist/eslint/index.js"
+    }
+  },
+  "bin": {
+    "gallop": "./dist/cli/index.js"
+  },
   "files": [
     "dist",
     "patterns",
@@ -20,10 +34,13 @@
     "architecture",
     "patterns",
     "canon",
+    "eslint",
+    "eslintplugin",
     "nextjs",
     "react",
     "governance",
-    "ai-compatible"
+    "ai-compatible",
+    "cli"
   ],
   "author": {
     "name": "Gallop",
@@ -35,7 +52,20 @@
     "url": "https://github.com/gallop-software/gallop",
     "directory": "canon"
   },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "^8.0.0"
+  },
   "devDependencies": {
+    "@types/eslint": "^9.6.0",
+    "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
   }
 }

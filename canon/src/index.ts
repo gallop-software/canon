@@ -5,7 +5,7 @@
  * Versioned, AI-compatible, auditable web architecture patterns
  */
 
-import schema from '../schema.json'
+import schema from '../schema.json' with { type: 'json' }
 
 // Types
 export interface Pattern {

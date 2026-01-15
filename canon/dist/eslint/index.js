@@ -1,0 +1,24 @@
+import noClientBlocks from './rules/no-client-blocks.js';
+import noContainerInSection from './rules/no-container-in-section.js';
+import preferComponentProps from './rules/prefer-component-props.js';
+import preferTypographyComponents from './rules/prefer-typography-components.js';
+import speedwellConfig from './configs/speedwell.js';
+import recommendedConfig from './configs/recommended.js';
+const plugin = {
+    meta: {
+        name: 'eslint-plugin-gallop',
+        version: '1.0.1',
+    },
+    rules: {
+        'no-client-blocks': noClientBlocks,
+        'no-container-in-section': noContainerInSection,
+        'prefer-component-props': preferComponentProps,
+        'prefer-typography-components': preferTypographyComponents,
+    },
+    configs: {
+        speedwell: speedwellConfig,
+        recommended: recommendedConfig,
+    },
+};
+export default plugin;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvZXNsaW50L2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sY0FBYyxNQUFNLDZCQUE2QixDQUFBO0FBQ3hELE9BQU8sb0JBQW9CLE1BQU0sb0NBQW9DLENBQUE7QUFDckUsT0FBTyxvQkFBb0IsTUFBTSxtQ0FBbUMsQ0FBQTtBQUNwRSxPQUFPLDBCQUEwQixNQUFNLHlDQUF5QyxDQUFBO0FBQ2hGLE9BQU8sZUFBZSxNQUFNLHdCQUF3QixDQUFBO0FBQ3BELE9BQU8saUJBQWlCLE1BQU0sMEJBQTBCLENBQUE7QUFFeEQsTUFBTSxNQUFNLEdBQUc7SUFDYixJQUFJLEVBQUU7UUFDSixJQUFJLEVBQUUsc0JBQXNCO1FBQzVCLE9BQU8sRUFBRSxPQUFPO0tBQ2pCO0lBQ0QsS0FBSyxFQUFFO1FBQ0wsa0JBQWtCLEVBQUUsY0FBYztRQUNsQyx5QkFBeUIsRUFBRSxvQkFBb0I7UUFDL0Msd0JBQXdCLEVBQUUsb0JBQW9CO1FBQzlDLDhCQUE4QixFQUFFLDBCQUEwQjtLQUMzRDtJQUNELE9BQU8sRUFBRTtRQUNQLFNBQVMsRUFBRSxlQUFlO1FBQzFCLFdBQVcsRUFBRSxpQkFBaUI7S0FDL0I7Q0FDRixDQUFBO0FBRUQsZUFBZSxNQUFNLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgbm9DbGllbnRCbG9ja3MgZnJvbSAnLi9ydWxlcy9uby1jbGllbnQtYmxvY2tzLmpzJ1xuaW1wb3J0IG5vQ29udGFpbmVySW5TZWN0aW9uIGZyb20gJy4vcnVsZXMvbm8tY29udGFpbmVyLWluLXNlY3Rpb24uanMnXG5pbXBvcnQgcHJlZmVyQ29tcG9uZW50UHJvcHMgZnJvbSAnLi9ydWxlcy9wcmVmZXItY29tcG9uZW50LXByb3BzLmpzJ1xuaW1wb3J0IHByZWZlclR5cG9ncmFwaHlDb21wb25lbnRzIGZyb20gJy4vcnVsZXMvcHJlZmVyLXR5cG9ncmFwaHktY29tcG9uZW50cy5qcydcbmltcG9ydCBzcGVlZHdlbGxDb25maWcgZnJvbSAnLi9jb25maWdzL3NwZWVkd2VsbC5qcydcbmltcG9ydCByZWNvbW1lbmRlZENvbmZpZyBmcm9tICcuL2NvbmZpZ3MvcmVjb21tZW5kZWQuanMnXG5cbmNvbnN0IHBsdWdpbiA9IHtcbiAgbWV0YToge1xuICAgIG5hbWU6ICdlc2xpbnQtcGx1Z2luLWdhbGxvcCcsXG4gICAgdmVyc2lvbjogJzEuMC4xJyxcbiAgfSxcbiAgcnVsZXM6IHtcbiAgICAnbm8tY2xpZW50LWJsb2Nrcyc6IG5vQ2xpZW50QmxvY2tzLFxuICAgICduby1jb250YWluZXItaW4tc2VjdGlvbic6IG5vQ29udGFpbmVySW5TZWN0aW9uLFxuICAgICdwcmVmZXItY29tcG9uZW50LXByb3BzJzogcHJlZmVyQ29tcG9uZW50UHJvcHMsXG4gICAgJ3ByZWZlci10eXBvZ3JhcGh5LWNvbXBvbmVudHMnOiBwcmVmZXJUeXBvZ3JhcGh5Q29tcG9uZW50cyxcbiAgfSxcbiAgY29uZmlnczoge1xuICAgIHNwZWVkd2VsbDogc3BlZWR3ZWxsQ29uZmlnLFxuICAgIHJlY29tbWVuZGVkOiByZWNvbW1lbmRlZENvbmZpZyxcbiAgfSxcbn1cblxuZXhwb3J0IGRlZmF1bHQgcGx1Z2luXG4iXX0=
