@@ -56,30 +56,51 @@ const rule: Rule.RuleModule = {
             parent = parent.parent
           }
 
-          // Check className for text-related classes and gradient text
-          let hasTextClasses = false
+          // Check className for gradient text (skip these)
           let isGradientText = false
+          let isVisualElement = false
 
           node.attributes?.forEach((attr: any) => {
             if (attr.type === 'JSXAttribute' && attr.name?.name === 'className') {
               const value = attr.value?.value || ''
-              // Check for text-related Tailwind classes
-              if (/\b(text-|font-|leading-|tracking-)/.test(value)) {
-                hasTextClasses = true
-              }
               // Skip gradient text spans (bg-clip-text is used for gradient text effects)
               if (/\bbg-clip-text\b/.test(value)) {
                 isGradientText = true
               }
+              // Skip visual elements (dots, decorative elements with w-/h- but no text)
+              if (/\b(w-\d|h-\d|rounded-full)\b/.test(value) && !/\btext-/.test(value)) {
+                isVisualElement = true
+              }
             }
           })
 
-          // Only warn if the span has text styling and is not gradient text
-          if (hasTextClasses && !isGradientText) {
-            context.report({
-              node,
-              messageId: 'useSpan',
+          if (isGradientText) {
+            return
+          }
+
+          // Check if span contains text content
+          const jsxElement = node.parent
+          if (jsxElement?.type === 'JSXElement') {
+            const children = jsxElement.children || []
+            const hasTextContent = children.some((child: any) => {
+              // Check for direct text content
+              if (child.type === 'JSXText') {
+                return child.value.trim().length > 0
+              }
+              // Check for expression with literal string
+              if (child.type === 'JSXExpressionContainer' && child.expression?.type === 'Literal') {
+                return typeof child.expression.value === 'string' && child.expression.value.trim().length > 0
+              }
+              return false
             })
+
+            // Warn if span has text content and is not a visual element
+            if (hasTextContent && !isVisualElement) {
+              context.report({
+                node,
+                messageId: 'useSpan',
+              })
+            }
           }
         }
       },
