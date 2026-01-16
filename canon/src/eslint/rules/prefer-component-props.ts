@@ -39,6 +39,13 @@ const componentPropMappings: Record<string, Record<string, RegExp>> = {
     margin: /^m([by])?-/, // m- (all), mb- (bottom), my- (y-axis) - all affect bottom margin
     color: /^text-(body|contrast|accent|white|black)/,
   },
+  Quote: {
+    margin: /^m([by])?-/, // m- (all), mb- (bottom), my- (y-axis) - all affect bottom margin
+    color: /^text-(body|contrast|accent|white|black)/,
+    fontSize: /^text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)$/,
+    fontWeight: /^font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)$/,
+    textAlign: /^text-(left|center|right|justify)$/,
+  },
 }
 
 export default createRule<[], MessageIds>({

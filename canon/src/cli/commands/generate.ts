@@ -146,6 +146,7 @@ function generateCursorrules(): string {
   lines.push('- `Paragraph` - props: `color`, `margin`, `fontSize`, `lineHeight`, `textAlign`')
   lines.push('- `Span` - props: `color`, `margin`, `fontSize` (inline text, mb-0 default)')
   lines.push('- `Label` - props: `color`, `margin`, `fontSize`, `fontWeight`, `textAlign`')
+  lines.push('- `Quote` - props: `variant`, `color`, `margin`, `fontSize`, `fontWeight`, `textAlign`')
   lines.push('')
   lines.push('### Layout')
   lines.push('- `Section` - semantic section wrapper')

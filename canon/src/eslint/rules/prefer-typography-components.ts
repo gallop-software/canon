@@ -15,6 +15,7 @@ const rule: Rule.RuleModule = {
     messages: {
       useParagraph: `[Canon ${pattern?.id || '003'}] Use the Paragraph component instead of <p>. Import: import { Paragraph } from "@/components"`,
       useSpan: `[Canon ${pattern?.id || '003'}] Use the Span component instead of <span> for text content. Import: import { Span } from "@/components"`,
+      useQuote: `[Canon ${pattern?.id || '003'}] Use the Quote component instead of <blockquote>. Import: import { Quote } from "@/components"`,
       useTypographyForDiv: `[Canon ${pattern?.id || '003'}] Use a typography component (Heading, Paragraph, Label, etc.) instead of <div> with text content.`,
     },
     schema: [],
@@ -107,6 +108,15 @@ const rule: Rule.RuleModule = {
           context.report({
             node,
             messageId: 'useParagraph',
+          })
+          return
+        }
+
+        // Check <blockquote> tags
+        if (elementName === 'blockquote') {
+          context.report({
+            node,
+            messageId: 'useQuote',
           })
           return
         }
