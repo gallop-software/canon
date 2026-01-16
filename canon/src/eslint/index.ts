@@ -8,6 +8,7 @@ import noInlineStyles from './rules/no-inline-styles.js'
 import noArbitraryColors from './rules/no-arbitrary-colors.js'
 import noCrossZoneImports from './rules/no-cross-zone-imports.js'
 import noDataImports from './rules/no-data-imports.js'
+import noNativeIntersectionObserver from './rules/no-native-intersection-observer.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -23,6 +24,7 @@ const recommended = {
   'gallop/no-arbitrary-colors': 'warn',
   'gallop/no-cross-zone-imports': 'warn',
   'gallop/no-data-imports': 'warn',
+  'gallop/no-native-intersection-observer': 'warn',
 } as const
 
 const plugin = {
@@ -41,6 +43,7 @@ const plugin = {
     'no-arbitrary-colors': noArbitraryColors,
     'no-cross-zone-imports': noCrossZoneImports,
     'no-data-imports': noDataImports,
+    'no-native-intersection-observer': noNativeIntersectionObserver,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config

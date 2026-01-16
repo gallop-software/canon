@@ -119,7 +119,7 @@
       "status": "stable",
       "enforcement": "eslint",
       "rule": "gallop/no-inline-styles",
-      "summary": "No inline styles, use Tailwind exclusively"
+      "summary": "No inline styles in blocks, components allowed for dynamic values"
     },
     {
       "id": "009",
@@ -270,6 +270,16 @@
       "enforcement": "cli",
       "rule": "gallop validate",
       "summary": "All files must be in Canon-defined zones"
+    },
+    {
+      "id": "024",
+      "title": "React Intersection Observer",
+      "file": "patterns/024-react-intersection-observer.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-native-intersection-observer",
+      "summary": "Use react-intersection-observer package, not native API"
     }
   ],
   "guarantees": [

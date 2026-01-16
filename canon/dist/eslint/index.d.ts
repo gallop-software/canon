@@ -28,6 +28,7 @@ declare const plugin: {
         'no-data-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noDataImports", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
+        'no-native-intersection-observer': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -44,6 +45,7 @@ declare const plugin: {
         readonly 'gallop/no-arbitrary-colors': "warn";
         readonly 'gallop/no-cross-zone-imports': "warn";
         readonly 'gallop/no-data-imports': "warn";
+        readonly 'gallop/no-native-intersection-observer': "warn";
     };
 };
 export default plugin;

@@ -13,15 +13,24 @@ export default createRule<[], MessageIds>({
   meta: {
     type: 'suggestion',
     docs: {
-      description: pattern?.summary || 'No inline styles, use Tailwind exclusively',
+      description: pattern?.summary || 'No inline styles in blocks, use Tailwind exclusively',
     },
     messages: {
-      noInlineStyles: `[Canon ${pattern?.id || '008'}] Avoid inline style attribute. Use Tailwind CSS classes instead. See: ${pattern?.title || 'Tailwind Only'} pattern.`,
+      noInlineStyles: `[Canon ${pattern?.id || '008'}] Avoid inline style attribute in blocks. Use Tailwind CSS classes instead. See: ${pattern?.title || 'Tailwind Only'} pattern.`,
     },
     schema: [],
   },
   defaultOptions: [],
   create(context) {
+    const filename = context.filename || context.getFilename()
+    
+    // Only enforce in blocks - components can use inline styles for dynamic values
+    const isBlock = filename.includes('/blocks/') || filename.includes('\\blocks\\')
+    
+    if (!isBlock) {
+      return {}
+    }
+
     return {
       JSXAttribute(node) {
         // Check if attribute is "style"

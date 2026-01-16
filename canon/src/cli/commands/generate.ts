@@ -167,6 +167,7 @@ function generateCursorrules(): string {
   lines.push('- Use Container inside Section - Section already provides containment')
   lines.push('- Use `classnames` package - use `clsx` instead')
   lines.push('- Use inline styles for hover states - use Tailwind classes')
+  lines.push('- Use native `IntersectionObserver` - use `react-intersection-observer` package')
   lines.push('')
 
   // File & Folder Authority section
