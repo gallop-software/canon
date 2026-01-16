@@ -117,8 +117,8 @@
       "file": "patterns/008-tailwind-only.md",
       "category": "styling",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/no-inline-styles",
       "summary": "No inline styles, use Tailwind exclusively"
     },
     {
@@ -230,6 +230,16 @@
       "enforcement": "eslint",
       "rule": "gallop/background-image-rounded",
       "summary": "Background images must have rounded=\"rounded-none\""
+    },
+    {
+      "id": "020",
+      "title": "No Arbitrary Colors",
+      "file": "patterns/020-no-arbitrary-colors.md",
+      "category": "styling",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-arbitrary-colors",
+      "summary": "Use defined color tokens, not arbitrary color values"
     }
   ],
   "guarantees": [

@@ -9,5 +9,7 @@ declare const recommendedRules: {
     readonly 'gallop/prefer-typography-components': "warn";
     readonly 'gallop/prefer-layout-components': "warn";
     readonly 'gallop/background-image-rounded': "warn";
+    readonly 'gallop/no-inline-styles': "warn";
+    readonly 'gallop/no-arbitrary-colors': "warn";
 };
 export default recommendedRules;
