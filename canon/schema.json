@@ -280,6 +280,26 @@
       "enforcement": "eslint",
       "rule": "gallop/no-native-intersection-observer",
       "summary": "Use react-intersection-observer package, not native API"
+    },
+    {
+      "id": "025",
+      "title": "No Components in Blocks",
+      "file": "patterns/025-no-component-in-blocks.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-component-in-blocks",
+      "summary": "Component functions must be in components folder, not blocks"
+    },
+    {
+      "id": "026",
+      "title": "List Components",
+      "file": "patterns/026-list-components.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/prefer-list-components",
+      "summary": "Use List/Li, not raw ul/li tags"
     }
   ],
   "guarantees": [

@@ -29,6 +29,8 @@ declare const plugin: {
             name: string;
         };
         'no-native-intersection-observer': import("eslint").Rule.RuleModule;
+        'no-component-in-blocks': import("eslint").Rule.RuleModule;
+        'prefer-list-components': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -46,6 +48,8 @@ declare const plugin: {
         readonly 'gallop/no-cross-zone-imports': "warn";
         readonly 'gallop/no-data-imports': "warn";
         readonly 'gallop/no-native-intersection-observer': "warn";
+        readonly 'gallop/no-component-in-blocks': "warn";
+        readonly 'gallop/prefer-list-components': "warn";
     };
 };
 export default plugin;
