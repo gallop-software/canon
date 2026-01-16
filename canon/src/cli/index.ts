@@ -2,6 +2,7 @@
 
 import { audit } from './commands/audit.js'
 import { generate } from './commands/generate.js'
+import { validate } from './commands/validate.js'
 import { version } from '../index.js'
 
 const args = process.argv.slice(2)
@@ -31,6 +32,7 @@ ${colors.bold}Usage:${colors.reset}
 ${colors.bold}Commands:${colors.reset}
   audit [path]       Check Canon compliance (default: src/blocks/)
   generate [output]  Generate AI rules from Canon (default: .cursorrules)
+  validate [path]    Validate project folder structure (default: .)
   version            Show version information
   help               Show this help message
 
@@ -41,12 +43,18 @@ ${colors.bold}Audit Options:${colors.reset}
 ${colors.bold}Generate Options:${colors.reset}
   --output, -o       Output file path (default: .cursorrules)
 
+${colors.bold}Validate Options:${colors.reset}
+  --strict           Exit with error code on violations
+  --json             Output as JSON
+
 ${colors.bold}Examples:${colors.reset}
   gallop audit
   gallop audit src/blocks/ --strict
   gallop generate
   gallop generate .cursorrules
   gallop generate --output .github/copilot-instructions.md
+  gallop validate
+  gallop validate . --strict
 `)
 }
 
@@ -85,6 +93,16 @@ async function main() {
         format: 'cursorrules' as const,
       }
       await generate(generateOptions)
+      break
+
+    case 'validate':
+      const validatePath =
+        args[1] && !args[1].startsWith('--') ? args[1] : '.'
+      const validateOptions = {
+        strict: args.includes('--strict'),
+        json: args.includes('--json'),
+      }
+      await validate(validatePath, validateOptions)
       break
 
     case 'version':

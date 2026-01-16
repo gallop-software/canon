@@ -6,6 +6,8 @@ import preferLayoutComponents from './rules/prefer-layout-components.js'
 import backgroundImageRounded from './rules/background-image-rounded.js'
 import noInlineStyles from './rules/no-inline-styles.js'
 import noArbitraryColors from './rules/no-arbitrary-colors.js'
+import noCrossZoneImports from './rules/no-cross-zone-imports.js'
+import noDataImports from './rules/no-data-imports.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -19,12 +21,14 @@ const recommended = {
   'gallop/background-image-rounded': 'warn',
   'gallop/no-inline-styles': 'warn',
   'gallop/no-arbitrary-colors': 'warn',
+  'gallop/no-cross-zone-imports': 'warn',
+  'gallop/no-data-imports': 'warn',
 } as const
 
 const plugin = {
   meta: {
     name: 'eslint-plugin-gallop',
-    version: '2.6.0',
+    version: '2.7.0',
   },
   rules: {
     'no-client-blocks': noClientBlocks,
@@ -35,6 +39,8 @@ const plugin = {
     'background-image-rounded': backgroundImageRounded,
     'no-inline-styles': noInlineStyles,
     'no-arbitrary-colors': noArbitraryColors,
+    'no-cross-zone-imports': noCrossZoneImports,
+    'no-data-imports': noDataImports,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config

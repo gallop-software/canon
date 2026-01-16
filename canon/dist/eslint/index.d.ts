@@ -22,6 +22,12 @@ declare const plugin: {
         'no-arbitrary-colors': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noArbitraryColors", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
+        'no-cross-zone-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blocksImportBlocks" | "componentsImportBlocks" | "runtimeImportScripts", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
+            name: string;
+        };
+        'no-data-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noDataImports", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
+            name: string;
+        };
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -36,6 +42,8 @@ declare const plugin: {
         readonly 'gallop/background-image-rounded': "warn";
         readonly 'gallop/no-inline-styles': "warn";
         readonly 'gallop/no-arbitrary-colors': "warn";
+        readonly 'gallop/no-cross-zone-imports': "warn";
+        readonly 'gallop/no-data-imports': "warn";
     };
 };
 export default plugin;

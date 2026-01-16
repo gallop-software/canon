@@ -1,5 +1,15 @@
 # Contributing to Canon
 
+## Folder Structure Convention
+
+Canon development assumes the following folder structure:
+
+```
+~/Sites/
+├── canon/           # This repo (gallop-software/canon)
+└── {template}/      # Your template repo (e.g., speedwell, acorn, etc.)
+```
+
 ## Adding or Updating ESLint Rules
 
 Follow this workflow when creating new Canon rules or updating existing ones.
@@ -132,10 +142,10 @@ cd ~/Sites/canon/canon
 npm run build
 ```
 
-Test in speedwell without publishing:
+Test in your template without publishing:
 
 ```bash
-cd ~/Sites/speedwell
+cd ~/Sites/{template}
 npm link ../canon/canon
 npx eslint src/blocks/your-test-file.tsx
 ```
@@ -152,13 +162,13 @@ cd ~/Sites/canon
 npm publish --workspace=canon --access public
 ```
 
-### 7. Update Speedwell
+### 7. Update Your Template
 
 ```bash
-cd ~/Sites/speedwell
+cd ~/Sites/{template}
 npm update @gallop.software/canon
 # or for specific version:
-npm install @gallop.software/canon@2.4.0
+npm install @gallop.software/canon@2.X.0
 ```
 
 ### 8. Regenerate AI Rules
@@ -180,9 +190,9 @@ git commit -m "feat: add your-rule-name rule (Pattern 0XX)
 git push
 ```
 
-Speedwell repo:
+Template repo:
 ```bash
-cd ~/Sites/speedwell
+cd ~/Sites/{template}
 git add -A
 git commit -m "chore: update canon to 2.X.X, add your-rule-name"
 git push

@@ -11,5 +11,7 @@ declare const recommendedRules: {
     readonly 'gallop/background-image-rounded': "warn";
     readonly 'gallop/no-inline-styles': "warn";
     readonly 'gallop/no-arbitrary-colors': "warn";
+    readonly 'gallop/no-cross-zone-imports': "warn";
+    readonly 'gallop/no-data-imports': "warn";
 };
 export default recommendedRules;

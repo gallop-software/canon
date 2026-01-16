@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "Gallop Canon",
   "version": "1.0.0",
-  "description": "Gallop Enterprise Architecture Canon - Versioned, AI-compatible, auditable web architecture patterns",
+  "description": "Gallop Canon - Versioned, AI-compatible, auditable web architecture patterns",
   "categories": [
     {
       "id": "rendering",
@@ -240,6 +240,36 @@
       "enforcement": "eslint",
       "rule": "gallop/no-arbitrary-colors",
       "summary": "Use defined color tokens, not arbitrary color values"
+    },
+    {
+      "id": "021",
+      "title": "Cross-Zone Import Boundaries",
+      "file": "patterns/021-cross-zone-imports.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-cross-zone-imports",
+      "summary": "Enforce import boundaries between Canon zones"
+    },
+    {
+      "id": "022",
+      "title": "No Data Direct Imports",
+      "file": "patterns/022-no-data-imports.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-data-imports",
+      "summary": "Prevent runtime code from importing _data/ directly"
+    },
+    {
+      "id": "023",
+      "title": "File Placement Authority",
+      "file": "patterns/023-file-placement.md",
+      "category": "structure",
+      "status": "stable",
+      "enforcement": "cli",
+      "rule": "gallop validate",
+      "summary": "All files must be in Canon-defined zones"
     }
   ],
   "guarantees": [

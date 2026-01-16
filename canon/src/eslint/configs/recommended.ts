@@ -26,6 +26,12 @@ const recommendedRules = {
 
   // Use defined color tokens, not arbitrary colors
   'gallop/no-arbitrary-colors': 'warn',
+
+  // Enforce import boundaries between Canon zones
+  'gallop/no-cross-zone-imports': 'warn',
+
+  // Prevent runtime code from importing _data/ directly
+  'gallop/no-data-imports': 'warn',
 } as const
 
 export default recommendedRules

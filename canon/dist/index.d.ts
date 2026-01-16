@@ -1,7 +1,7 @@
 /**
  * @gallop/canon
  *
- * Gallop Enterprise Architecture Canon
+ * Gallop Canon
  * Versioned, AI-compatible, auditable web architecture patterns
  */
 export interface Pattern {

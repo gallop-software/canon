@@ -1,10 +1,10 @@
-# @gallop/canon
+# @gallop.software/canon
 
-**Gallop Enterprise Architecture Canon** — A versioned, AI-compatible, auditable system of approved web architecture patterns.
+**Gallop Canon** — A versioned, AI-compatible, auditable system of approved web architecture patterns.
 
 ## What is the Canon?
 
-The Canon is a closed set of authoritative patterns that define how serious web applications should be built. Each pattern is:
+The Canon is a closed set of authoritative patterns that define how web applications should be built. Each pattern is:
 
 - **Versioned** — Pin to a specific version, upgrade deliberately
 - **Documented** — Decision-level documentation, not just code comments
@@ -14,28 +14,98 @@ The Canon is a closed set of authoritative patterns that define how serious web 
 ## Installation
 
 ```bash
-npm install @gallop/canon
+npm install @gallop.software/canon
 ```
 
-## Usage
+## ESLint Setup
 
-### Access Pattern Metadata
+Add Canon rules to your `eslint.config.mjs`:
 
-```typescript
-import { patterns, getPattern, getPatternsByCategory } from '@gallop/canon'
+```javascript
+import nextConfig from 'eslint-config-next'
+import gallop from '@gallop.software/canon/eslint'
 
-// Get all patterns
-console.log(patterns)
-
-// Get a specific pattern
-const pattern = getPattern('001')
-console.log(pattern.title) // "Server-First Blocks"
-
-// Get patterns by category
-const renderingPatterns = getPatternsByCategory('rendering')
+export default [
+  ...nextConfig,
+  {
+    files: ['src/blocks/**/*.tsx', 'src/components/**/*.tsx'],
+    plugins: {
+      gallop,
+    },
+    rules: {
+      ...gallop.recommended,
+    },
+  },
+]
 ```
 
-### Pattern Categories
+### Opting Out of Rules
+
+To disable specific rules, override them after spreading `recommended`:
+
+```javascript
+rules: {
+  ...gallop.recommended,
+  // Disable specific rules
+  'gallop/no-inline-styles': 'off',
+  'gallop/no-arbitrary-colors': 'off',
+}
+```
+
+To change a rule from warning to error:
+
+```javascript
+rules: {
+  ...gallop.recommended,
+  'gallop/no-cross-zone-imports': 'error',
+}
+```
+
+### Available Rules
+
+| Rule | Description |
+|------|-------------|
+| `gallop/no-client-blocks` | Blocks must be server components |
+| `gallop/no-container-in-section` | No Container inside Section |
+| `gallop/prefer-component-props` | Use props over className for styles |
+| `gallop/prefer-typography-components` | Use Paragraph/Span, not raw tags |
+| `gallop/prefer-layout-components` | Use Grid/Columns, not raw div |
+| `gallop/background-image-rounded` | Background images need rounded prop |
+| `gallop/no-inline-styles` | No style attribute, use Tailwind |
+| `gallop/no-arbitrary-colors` | Use color tokens, not arbitrary values |
+| `gallop/no-cross-zone-imports` | Enforce import boundaries |
+| `gallop/no-data-imports` | No direct _data/ imports in runtime |
+
+## CLI Commands
+
+### Generate AI Rules
+
+Generate `.cursorrules` or Copilot instructions from Canon:
+
+```bash
+npx gallop generate .cursorrules
+npx gallop generate .github/copilot-instructions.md
+```
+
+### Validate Project Structure
+
+Check folder structure compliance:
+
+```bash
+npx gallop validate
+npx gallop validate --strict  # Exit code 1 on violations
+```
+
+### Audit Code
+
+Check code compliance:
+
+```bash
+npx gallop audit
+npx gallop audit src/blocks/ --strict
+```
+
+## Pattern Categories
 
 | Category | Description |
 |----------|-------------|
@@ -50,29 +120,6 @@ const renderingPatterns = getPatternsByCategory('rendering')
 ## Patterns
 
 See the [patterns/](./patterns) directory for full documentation of each pattern.
-
-### Enforced by ESLint
-
-- **001** Server-First Blocks
-- **002** Layout Hierarchy
-- **003** Typography Components
-- **004** Component Props
-
-### Documentation-Only
-
-- **005** Page Structure
-- **006** Block Naming
-- **007** Import Paths
-- **008** Tailwind Only
-- **009** Color Tokens
-- **010** Spacing System
-- **011** Responsive Mobile-First
-- **012** Icon System
-- **013** New Component Pattern
-- **014** clsx Not classnames
-- **015** No Inline Hover Styles
-- **016** Client Extraction
-- **017** SEO Metadata
 
 ## Guarantees
 
