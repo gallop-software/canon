@@ -31,6 +31,7 @@ declare const plugin: {
         'no-native-intersection-observer': import("eslint").Rule.RuleModule;
         'no-component-in-blocks': import("eslint").Rule.RuleModule;
         'prefer-list-components': import("eslint").Rule.RuleModule;
+        'no-native-date': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -50,6 +51,7 @@ declare const plugin: {
         readonly 'gallop/no-native-intersection-observer': "warn";
         readonly 'gallop/no-component-in-blocks': "warn";
         readonly 'gallop/prefer-list-components': "warn";
+        readonly 'gallop/no-native-date': "warn";
     };
 };
 export default plugin;

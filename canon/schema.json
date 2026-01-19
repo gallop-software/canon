@@ -300,6 +300,16 @@
       "enforcement": "eslint",
       "rule": "gallop/prefer-list-components",
       "summary": "Use List/Li, not raw ul/li tags"
+    },
+    {
+      "id": "027",
+      "title": "Luxon for Dates",
+      "file": "patterns/027-luxon-dates.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-native-date",
+      "summary": "Use Luxon DateTime, not native JavaScript Date"
     }
   ],
   "guarantees": [

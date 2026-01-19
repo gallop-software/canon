@@ -11,6 +11,7 @@ import noDataImports from './rules/no-data-imports.js'
 import noNativeIntersectionObserver from './rules/no-native-intersection-observer.js'
 import noComponentInBlocks from './rules/no-component-in-blocks.js'
 import preferListComponents from './rules/prefer-list-components.js'
+import noNativeDate from './rules/no-native-date.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -29,6 +30,7 @@ const recommended = {
   'gallop/no-native-intersection-observer': 'warn',
   'gallop/no-component-in-blocks': 'warn',
   'gallop/prefer-list-components': 'warn',
+  'gallop/no-native-date': 'warn',
 } as const
 
 const plugin = {
@@ -50,6 +52,7 @@ const plugin = {
     'no-native-intersection-observer': noNativeIntersectionObserver,
     'no-component-in-blocks': noComponentInBlocks,
     'prefer-list-components': preferListComponents,
+    'no-native-date': noNativeDate,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config
