@@ -24,6 +24,7 @@ Use dedicated props instead of `className` for styling that components support.
 <Heading className="text-center mb-6 text-accent">Title</Heading>
 <Paragraph className="text-lg mb-4">Text content</Paragraph>
 <Label className="text-sm font-semibold">Category</Label>
+<Image src="/photo.jpg" className="rounded-lg aspect-4/5" />
 ```
 
 ### Good
@@ -38,6 +39,7 @@ Use dedicated props instead of `className` for styling that components support.
 <Label fontSize="text-sm" fontWeight="font-semibold">
   Category
 </Label>
+<Image src="/photo.jpg" rounded="rounded-lg" aspect="aspect-4/5" />
 ```
 
 ## Supported Props by Component
@@ -71,6 +73,10 @@ Use dedicated props instead of `className` for styling that components support.
 ### Button
 - `margin` — Bottom margin
 
+### Image
+- `rounded` — Border radius (e.g., `rounded-lg`, `rounded-none`, `rounded-full`)
+- `aspect` — Aspect ratio (e.g., `aspect-4/5`, `aspect-square`, `aspect-video`)
+
 ## When to Use className
 
 Use `className` for styles that are NOT covered by props:
@@ -100,3 +106,4 @@ If a component doesn't support a prop you need:
 - `src/components/heading.tsx` — Heading with prop overrides
 - `src/components/paragraph.tsx` — Paragraph with prop overrides
 - `src/components/label.tsx` — Label with prop overrides
+- `src/components/image.tsx` — Image with prop overrides

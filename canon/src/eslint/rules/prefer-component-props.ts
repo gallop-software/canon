@@ -46,6 +46,10 @@ const componentPropMappings: Record<string, Record<string, RegExp>> = {
     fontWeight: /^font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)$/,
     textAlign: /^text-(left|center|right|justify)$/,
   },
+  Image: {
+    rounded: /^rounded(-none|-sm|-md|-lg|-xl|-2xl|-3xl|-full)?$/,
+    aspect: /^aspect-/,
+  },
 }
 
 export default createRule<[], MessageIds>({
