@@ -6,7 +6,7 @@ const pattern = getCanonPattern(RULE_NAME)
 
 const createRule = ESLintUtils.RuleCreator(() => getCanonUrl(RULE_NAME))
 
-type MessageIds = 'blockNamingMismatch'
+type MessageIds = 'blockNamingMismatch' | 'blockNamingNoNumber'
 
 /**
  * Converts a block filename to its expected PascalCase export name
@@ -26,6 +26,26 @@ function filenameToPascalCase(filename: string): string {
     .join('')
 }
 
+/**
+ * Converts a PascalCase export name to kebab-case filename
+ * e.g., "Content" -> "content", "Hero5" -> "hero-5", "CallToAction1" -> "call-to-action-1"
+ */
+function pascalCaseToFilename(name: string): string {
+  return name
+    // Insert hyphen before uppercase letters (but not at start)
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    // Insert hyphen before numbers
+    .replace(/([a-zA-Z])(\d)/g, '$1-$2')
+    .toLowerCase()
+}
+
+/**
+ * Check if a name ends with a number
+ */
+function hasTrailingNumber(name: string): boolean {
+  return /\d+$/.test(name)
+}
+
 export default createRule<[], MessageIds>({
   name: RULE_NAME,
   meta: {
@@ -34,7 +54,8 @@ export default createRule<[], MessageIds>({
       description: pattern?.summary || 'Block export names must match filename pattern',
     },
     messages: {
-      blockNamingMismatch: `[Canon ${pattern?.id || '006'}] Block export "{{actual}}" should be "{{expected}}" to match the filename "{{filename}}". See: ${pattern?.title || 'Block Naming'} pattern.`,
+      blockNamingMismatch: `[Canon ${pattern?.id || '006'}] Block export "{{actual}}" should be "{{expected}}" to match the filename "{{filename}}". Or rename the file to "{{suggestedFilename}}.tsx". See: ${pattern?.title || 'Block Naming'} pattern.`,
+      blockNamingNoNumber: `[Canon ${pattern?.id || '006'}] Block export "{{actual}}" must end with a number (e.g., "{{actual}}1"). Rename to "{{suggested}}" or rename file to "{{suggestedFilename}}-{n}.tsx". See: ${pattern?.title || 'Block Naming'} pattern.`,
     },
     schema: [],
   },
@@ -61,16 +82,35 @@ export default createRule<[], MessageIds>({
       ExportDefaultDeclaration(node) {
         if (node.declaration.type === 'FunctionDeclaration' && node.declaration.id) {
           const actualName = node.declaration.id.name
+          
           if (actualName !== expectedName) {
-            context.report({
-              node: node.declaration.id,
-              messageId: 'blockNamingMismatch',
-              data: {
-                actual: actualName,
-                expected: expectedName,
-                filename: blockFilename,
-              },
-            })
+            // Check if the export name has a trailing number
+            if (!hasTrailingNumber(actualName)) {
+              // No number - suggest adding one
+              const suggestedFilename = pascalCaseToFilename(actualName)
+              context.report({
+                node: node.declaration.id,
+                messageId: 'blockNamingNoNumber',
+                data: {
+                  actual: actualName,
+                  suggested: `${actualName}1`,
+                  suggestedFilename,
+                },
+              })
+            } else {
+              // Has number but doesn't match filename
+              const suggestedFilename = pascalCaseToFilename(actualName)
+              context.report({
+                node: node.declaration.id,
+                messageId: 'blockNamingMismatch',
+                data: {
+                  actual: actualName,
+                  expected: expectedName,
+                  filename: blockFilename,
+                  suggestedFilename,
+                },
+              })
+            }
           }
         }
       },

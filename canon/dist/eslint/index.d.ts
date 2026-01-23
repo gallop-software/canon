@@ -7,7 +7,7 @@ declare const plugin: {
         'no-client-blocks': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noClientBlocks", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
-        'block-naming-convention': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blockNamingMismatch", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
+        'block-naming-convention': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blockNamingMismatch" | "blockNamingNoNumber", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
         'no-container-in-section': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noContainerInSection", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
