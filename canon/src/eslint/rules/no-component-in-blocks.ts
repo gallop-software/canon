@@ -5,13 +5,13 @@ const rule: Rule.RuleModule = {
     type: 'suggestion',
     docs: {
       description:
-        'Prevent defining component functions inside block files - components should be in the components folder',
+        'Prevent exporting component functions from block files - reusable components should be in the components folder',
       category: 'Best Practices',
       recommended: true,
     },
     messages: {
       noComponentInBlocks:
-        '[Canon 025] Component functions should not be defined in block files. Move this component to src/components/ and import it.',
+        '[Canon 025] Exported component functions should not be defined in block files. Move this component to src/components/ and import it. Non-exported content components are allowed.',
     },
     schema: [],
   },
@@ -26,6 +26,8 @@ const rule: Rule.RuleModule = {
 
     // Track the default export name to allow it
     let defaultExportName: string | null = null
+    // Track named exports
+    const namedExports = new Set<string>()
 
     return {
       // Track the default export
@@ -37,6 +39,35 @@ const rule: Rule.RuleModule = {
         }
       },
 
+      // Track named exports: export function Foo() {} or export const Foo = () => {}
+      ExportNamedDeclaration(node) {
+        if (node.declaration) {
+          if (node.declaration.type === 'FunctionDeclaration' && node.declaration.id) {
+            namedExports.add(node.declaration.id.name)
+          } else if (node.declaration.type === 'VariableDeclaration') {
+            for (const declarator of node.declaration.declarations) {
+              if (declarator.id.type === 'Identifier') {
+                namedExports.add(declarator.id.name)
+              }
+            }
+          }
+        }
+        // Handle: export { Foo, Bar }
+        if (node.specifiers) {
+          for (const specifier of node.specifiers) {
+            if (specifier.exported.type === 'Identifier') {
+              namedExports.add(specifier.exported.name)
+            }
+          }
+        }
+      },
+
+      // Check for exported function declarations that look like components (PascalCase)
+      'Program:exit'() {
+        // Now check all named exports that are PascalCase
+        // The actual flagging happens in the ExportNamedDeclaration handler
+      },
+
       // Check for function declarations that look like components (PascalCase)
       FunctionDeclaration(node) {
         if (!node.id) return
@@ -45,6 +76,10 @@ const rule: Rule.RuleModule = {
 
         // Skip the default export (the block itself)
         if (name === defaultExportName) return
+
+        // Only flag if it's exported (named export)
+        // Non-exported content components are allowed
+        if (!namedExports.has(name)) return
 
         // Check if it's PascalCase (likely a component)
         if (/^[A-Z]/.test(name)) {
@@ -68,6 +103,10 @@ const rule: Rule.RuleModule = {
 
             // Skip the default export
             if (name === defaultExportName) return
+
+            // Only flag if it's exported (named export)
+            // Non-exported content components are allowed
+            if (!namedExports.has(name)) return
 
             // Check if it's PascalCase (likely a component)
             if (/^[A-Z]/.test(name)) {

@@ -289,7 +289,7 @@
       "status": "stable",
       "enforcement": "eslint",
       "rule": "gallop/no-component-in-blocks",
-      "summary": "Component functions must be in components folder, not blocks"
+      "summary": "Exported component functions must be in components folder; non-exported content components are allowed in blocks"
     },
     {
       "id": "026",
