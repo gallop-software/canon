@@ -7,6 +7,9 @@ declare const plugin: {
         'no-client-blocks': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noClientBlocks", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
+        'block-naming-convention': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blockNamingMismatch", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
+            name: string;
+        };
         'no-container-in-section': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noContainerInSection", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
@@ -39,6 +42,7 @@ declare const plugin: {
      */
     recommended: {
         readonly 'gallop/no-client-blocks': "warn";
+        readonly 'gallop/block-naming-convention': "warn";
         readonly 'gallop/no-container-in-section': "warn";
         readonly 'gallop/prefer-component-props': "warn";
         readonly 'gallop/prefer-typography-components': "warn";

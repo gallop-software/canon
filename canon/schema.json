@@ -97,8 +97,8 @@
       "file": "patterns/006-block-naming.md",
       "category": "structure",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/block-naming-convention",
       "summary": "{type}-{n}.tsx naming, PascalCase exports"
     },
     {

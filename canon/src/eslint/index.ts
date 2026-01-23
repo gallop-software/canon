@@ -12,12 +12,14 @@ import noNativeIntersectionObserver from './rules/no-native-intersection-observe
 import noComponentInBlocks from './rules/no-component-in-blocks.js'
 import preferListComponents from './rules/prefer-list-components.js'
 import noNativeDate from './rules/no-native-date.js'
+import blockNamingConvention from './rules/block-naming-convention.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
  */
 const recommended = {
   'gallop/no-client-blocks': 'warn',
+  'gallop/block-naming-convention': 'warn',
   'gallop/no-container-in-section': 'warn',
   'gallop/prefer-component-props': 'warn',
   'gallop/prefer-typography-components': 'warn',
@@ -40,6 +42,7 @@ const plugin = {
   },
   rules: {
     'no-client-blocks': noClientBlocks,
+    'block-naming-convention': blockNamingConvention,
     'no-container-in-section': noContainerInSection,
     'prefer-component-props': preferComponentProps,
     'prefer-typography-components': preferTypographyComponents,
