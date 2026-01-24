@@ -38,7 +38,7 @@ import twitterIcon from '@iconify/icons-simple-icons/twitter'
 ### Render with Icon Component
 
 ```tsx
-import { Icon } from '@/components'
+import { Icon } from '@/components/icon'
 
 <Icon icon={arrowRightIcon} className="w-5 h-5" />
 <Icon icon={playCircleIcon} className="w-6 h-6 text-accent" />
@@ -75,7 +75,7 @@ import { Icon } from '@/components'
 
 ```tsx
 import arrowRightIcon from '@iconify/icons-heroicons/arrow-right-20-solid'
-import { Icon } from '@/components'
+import { Icon } from '@/components/icon'
 
 <button className="flex items-center gap-2">
   Next

@@ -7,20 +7,21 @@
 
 ## Decision
 
-Use `@/` path aliases for all internal imports. Use destructured imports for components.
+Use `@/` path aliases for all internal imports. Use direct file imports for components (no barrel exports).
 
 ## Rationale
 
 1. **Consistent paths** — No relative path gymnastics (`../../..`)
 2. **Refactoring safe** — Moving files doesn't break imports
 3. **Clear origin** — `@/` indicates project source
-4. **Smaller bundles** — Destructured imports enable tree shaking
+4. **AI-readable** — Direct imports show exactly where each component lives
+5. **Explicit dependencies** — No hidden re-exports through barrel files
 
 ## Path Aliases
 
 | Alias | Resolves To | Example |
 |-------|-------------|---------|
-| `@/components` | `src/components` | `import { Heading } from '@/components'` |
+| `@/components` | `src/components` | `import { Heading } from '@/components/heading'` |
 | `@/blocks` | `src/blocks` | `import Hero1 from '@/blocks/hero-1'` |
 | `@/hooks` | `src/hooks` | `import { useInView } from '@/hooks/use-in-view'` |
 | `@/template` | `src/template` | `import PageFooter from '@/template/page-footer'` |
@@ -28,15 +29,33 @@ Use `@/` path aliases for all internal imports. Use destructured imports for com
 
 ## Import Patterns
 
-### Components (Destructured)
+### Components (Direct File Imports)
 
 ```tsx
-// Good: Destructured import from barrel
-import { Heading, Paragraph, Button, Section, Columns, Column } from '@/components'
-
-// Bad: Individual file imports
+// Good: Direct file imports
 import { Heading } from '@/components/heading'
 import { Paragraph } from '@/components/paragraph'
+import { Button } from '@/components/button'
+import { Section } from '@/components/section'
+import { Columns, Column } from '@/components/columns'
+
+// Bad: Barrel imports (don't use)
+import { Heading, Paragraph, Button } from '@/components'
+```
+
+### Component Subfolders
+
+For components in subfolders (like `navbar/`, `form/`):
+
+```tsx
+// Good: Import from subfolder
+import { Navbar } from '@/components/navbar'
+import { Form, FormInput } from '@/components/form'
+
+// Within subfolders, same-folder imports can use relative paths
+// In navbar/mobile-nav.tsx:
+import { links } from './config'
+import type { NavLink } from './types'
 ```
 
 ### Blocks (Default Export)
@@ -77,15 +96,12 @@ import playCircleIcon from '@iconify/icons-lucide/play-circle'
 ### Good
 
 ```tsx
-import {
-  Heading,
-  Paragraph,
-  Button,
-  Section,
-  Columns,
-  Column,
-  Image,
-} from '@/components'
+import { Heading } from '@/components/heading'
+import { Paragraph } from '@/components/paragraph'
+import { Button } from '@/components/button'
+import { Section } from '@/components/section'
+import { Columns, Column } from '@/components/columns'
+import { Image } from '@/components/image'
 import Hero1 from '@/blocks/hero-1'
 import arrowDownIcon from '@iconify/icons-heroicons/arrow-down-20-solid'
 ```
@@ -93,7 +109,10 @@ import arrowDownIcon from '@iconify/icons-heroicons/arrow-down-20-solid'
 ### Bad
 
 ```tsx
-// Relative imports
+// Barrel imports (no longer used)
+import { Heading, Paragraph, Button } from '@/components'
+
+// Relative imports outside component subfolders
 import { Heading } from '../../components/heading'
 import Hero1 from '../blocks/hero-1'
 
@@ -101,6 +120,15 @@ import Hero1 from '../blocks/hero-1'
 import { Heading } from 'components/heading'
 import { Heading } from '~/components/heading'
 ```
+
+## Why Not Barrel Exports?
+
+Barrel exports (`src/components/index.ts`) were previously used but removed because:
+
+1. **AI tools** must trace through the barrel to find actual component files
+2. **Hidden complexity** — Re-exports obscure where code actually lives
+3. **Maintenance burden** — Must update barrel when adding/removing components
+4. **No real benefit** — Direct imports are equally concise and more explicit
 
 ## Enforcement
 
@@ -110,4 +138,3 @@ import { Heading } from '~/components/heading'
 ## References
 
 - `tsconfig.json` — Path alias configuration
-- `src/components/index.ts` — Component barrel file

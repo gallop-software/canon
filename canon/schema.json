@@ -109,7 +109,7 @@
       "status": "stable",
       "enforcement": "documentation",
       "rule": null,
-      "summary": "@/ aliases, destructured imports"
+      "summary": "@/ aliases, direct file imports"
     },
     {
       "id": "008",

@@ -13,8 +13,8 @@ const rule: Rule.RuleModule = {
       url: getCanonUrl(RULE_NAME),
     },
     messages: {
-      useList: `[Canon ${pattern?.id || '026'}] Use the List component instead of <ul>. Import: import { List } from "@/components"`,
-      useLi: `[Canon ${pattern?.id || '026'}] Use the Li component instead of <li>. Import: import { Li } from "@/components"`,
+      useList: `[Canon ${pattern?.id || '026'}] Use the List component instead of <ul>. Import: import { List } from "@/components/list"`,
+      useLi: `[Canon ${pattern?.id || '026'}] Use the Li component instead of <li>. Import: import { Li } from "@/components/list"`,
     },
     schema: [],
   },

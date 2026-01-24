@@ -36,7 +36,7 @@ export default function Hero1() {
 
 ```tsx
 // src/blocks/hero-1.tsx
-import { FeatureCard } from '@/components'
+import { FeatureCard } from '@/components/feature-card'
 
 export default function Hero1() {
   return <FeatureCard title="Hello" />

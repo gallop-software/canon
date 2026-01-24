@@ -35,7 +35,8 @@ Raw `<div>` elements with grid classes bypass the design system's layout abstrac
 ## Good
 
 ```tsx
-import { Grid, Columns, Column } from '@/components'
+import { Grid } from '@/components/grid'
+import { Columns, Column } from '@/components/columns'
 
 <Grid cols="grid-cols-3" gap="gap-6">
   <Card>...</Card>

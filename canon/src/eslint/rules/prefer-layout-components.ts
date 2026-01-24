@@ -13,7 +13,7 @@ const rule: Rule.RuleModule = {
       url: getCanonUrl(RULE_NAME),
     },
     messages: {
-      useLayoutComponent: `[Canon ${pattern?.id || '018'}] Use the Grid or Columns component instead of <div className="grid ...">. Import: import { Grid, Columns, Column } from "@/components"`,
+      useLayoutComponent: `[Canon ${pattern?.id || '018'}] Use the Grid or Columns component instead of <div className="grid ...">. Import: import { Columns, Column } from "@/components/columns"`,
     },
     schema: [],
   },
