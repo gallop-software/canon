@@ -28,9 +28,6 @@ declare const plugin: {
         'no-cross-zone-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blocksImportBlocks" | "componentsImportBlocks" | "runtimeImportScripts", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
-        'no-data-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noDataImports", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
-            name: string;
-        };
         'no-native-intersection-observer': import("eslint").Rule.RuleModule;
         'no-component-in-blocks': import("eslint").Rule.RuleModule;
         'prefer-list-components': import("eslint").Rule.RuleModule;
@@ -51,7 +48,6 @@ declare const plugin: {
         readonly 'gallop/no-inline-styles': "warn";
         readonly 'gallop/no-arbitrary-colors': "warn";
         readonly 'gallop/no-cross-zone-imports': "warn";
-        readonly 'gallop/no-data-imports': "warn";
         readonly 'gallop/no-native-intersection-observer': "warn";
         readonly 'gallop/no-component-in-blocks': "warn";
         readonly 'gallop/prefer-list-components': "warn";

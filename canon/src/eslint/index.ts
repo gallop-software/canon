@@ -7,7 +7,6 @@ import backgroundImageRounded from './rules/background-image-rounded.js'
 import noInlineStyles from './rules/no-inline-styles.js'
 import noArbitraryColors from './rules/no-arbitrary-colors.js'
 import noCrossZoneImports from './rules/no-cross-zone-imports.js'
-import noDataImports from './rules/no-data-imports.js'
 import noNativeIntersectionObserver from './rules/no-native-intersection-observer.js'
 import noComponentInBlocks from './rules/no-component-in-blocks.js'
 import preferListComponents from './rules/prefer-list-components.js'
@@ -28,7 +27,6 @@ const recommended = {
   'gallop/no-inline-styles': 'warn',
   'gallop/no-arbitrary-colors': 'warn',
   'gallop/no-cross-zone-imports': 'warn',
-  'gallop/no-data-imports': 'warn',
   'gallop/no-native-intersection-observer': 'warn',
   'gallop/no-component-in-blocks': 'warn',
   'gallop/prefer-list-components': 'warn',
@@ -51,7 +49,6 @@ const plugin = {
     'no-inline-styles': noInlineStyles,
     'no-arbitrary-colors': noArbitraryColors,
     'no-cross-zone-imports': noCrossZoneImports,
-    'no-data-imports': noDataImports,
     'no-native-intersection-observer': noNativeIntersectionObserver,
     'no-component-in-blocks': noComponentInBlocks,
     'prefer-list-components': preferListComponents,

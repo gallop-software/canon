@@ -252,16 +252,6 @@
       "summary": "Enforce import boundaries between Canon zones"
     },
     {
-      "id": "022",
-      "title": "No Data Direct Imports",
-      "file": "patterns/022-no-data-imports.md",
-      "category": "structure",
-      "status": "stable",
-      "enforcement": "eslint",
-      "rule": "gallop/no-data-imports",
-      "summary": "Prevent runtime code from importing _data/ directly"
-    },
-    {
       "id": "023",
       "title": "File Placement Authority",
       "file": "patterns/023-file-placement.md",
