@@ -28,6 +28,7 @@ declare const plugin: {
         'no-component-in-blocks': import("eslint").Rule.RuleModule;
         'prefer-list-components': import("eslint").Rule.RuleModule;
         'no-native-date': import("eslint").Rule.RuleModule;
+        'require-canon-setup': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -46,6 +47,7 @@ declare const plugin: {
         readonly 'gallop/no-component-in-blocks': "warn";
         readonly 'gallop/prefer-list-components': "warn";
         readonly 'gallop/no-native-date': "warn";
+        readonly 'gallop/require-canon-setup': "warn";
     };
 };
 export default plugin;

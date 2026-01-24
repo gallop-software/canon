@@ -10,6 +10,7 @@ import noComponentInBlocks from './rules/no-component-in-blocks.js'
 import preferListComponents from './rules/prefer-list-components.js'
 import noNativeDate from './rules/no-native-date.js'
 import blockNamingConvention from './rules/block-naming-convention.js'
+import requireCanonSetup from './rules/require-canon-setup.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -27,6 +28,7 @@ const recommended = {
   'gallop/no-component-in-blocks': 'warn',
   'gallop/prefer-list-components': 'warn',
   'gallop/no-native-date': 'warn',
+  'gallop/require-canon-setup': 'warn',
 } as const
 
 const plugin = {
@@ -47,6 +49,7 @@ const plugin = {
     'no-component-in-blocks': noComponentInBlocks,
     'prefer-list-components': preferListComponents,
     'no-native-date': noNativeDate,
+    'require-canon-setup': requireCanonSetup,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config
