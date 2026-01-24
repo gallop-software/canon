@@ -18,7 +18,6 @@ declare const plugin: {
         };
         'prefer-typography-components': import("eslint").Rule.RuleModule;
         'prefer-layout-components': import("eslint").Rule.RuleModule;
-        'background-image-rounded': import("eslint").Rule.RuleModule;
         'no-arbitrary-colors': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noArbitraryColors", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
@@ -41,7 +40,6 @@ declare const plugin: {
         readonly 'gallop/prefer-component-props': "warn";
         readonly 'gallop/prefer-typography-components': "warn";
         readonly 'gallop/prefer-layout-components': "warn";
-        readonly 'gallop/background-image-rounded': "warn";
         readonly 'gallop/no-arbitrary-colors': "warn";
         readonly 'gallop/no-cross-zone-imports': "warn";
         readonly 'gallop/no-native-intersection-observer': "warn";

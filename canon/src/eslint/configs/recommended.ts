@@ -18,9 +18,6 @@ const recommendedRules = {
   // Use Grid/Columns instead of raw div with grid classes
   'gallop/prefer-layout-components': 'warn',
 
-  // Background images must have rounded="rounded-none"
-  'gallop/background-image-rounded': 'warn',
-
   // Use defined color tokens, not arbitrary colors
   'gallop/no-arbitrary-colors': 'warn',
 

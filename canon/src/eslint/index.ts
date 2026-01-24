@@ -3,7 +3,6 @@ import noContainerInSection from './rules/no-container-in-section.js'
 import preferComponentProps from './rules/prefer-component-props.js'
 import preferTypographyComponents from './rules/prefer-typography-components.js'
 import preferLayoutComponents from './rules/prefer-layout-components.js'
-import backgroundImageRounded from './rules/background-image-rounded.js'
 import noArbitraryColors from './rules/no-arbitrary-colors.js'
 import noCrossZoneImports from './rules/no-cross-zone-imports.js'
 import noNativeIntersectionObserver from './rules/no-native-intersection-observer.js'
@@ -22,7 +21,6 @@ const recommended = {
   'gallop/prefer-component-props': 'warn',
   'gallop/prefer-typography-components': 'warn',
   'gallop/prefer-layout-components': 'warn',
-  'gallop/background-image-rounded': 'warn',
   'gallop/no-arbitrary-colors': 'warn',
   'gallop/no-cross-zone-imports': 'warn',
   'gallop/no-native-intersection-observer': 'warn',
@@ -43,7 +41,6 @@ const plugin = {
     'prefer-component-props': preferComponentProps,
     'prefer-typography-components': preferTypographyComponents,
     'prefer-layout-components': preferLayoutComponents,
-    'background-image-rounded': backgroundImageRounded,
     'no-arbitrary-colors': noArbitraryColors,
     'no-cross-zone-imports': noCrossZoneImports,
     'no-native-intersection-observer': noNativeIntersectionObserver,
