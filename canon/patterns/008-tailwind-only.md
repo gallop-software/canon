@@ -89,7 +89,7 @@ import { clsx } from 'clsx'
 ## Enforcement
 
 - **Method:** Code review / Documentation
-- **Future:** ESLint rule to detect inline styles
+- **Note:** Inline styles are allowed for dynamic values (positioning, transforms, CSS variables)
 
 ## References
 

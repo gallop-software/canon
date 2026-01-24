@@ -21,9 +21,6 @@ const recommendedRules = {
   // Background images must have rounded="rounded-none"
   'gallop/background-image-rounded': 'warn',
 
-  // No inline styles, use Tailwind exclusively
-  'gallop/no-inline-styles': 'warn',
-
   // Use defined color tokens, not arbitrary colors
   'gallop/no-arbitrary-colors': 'warn',
 
