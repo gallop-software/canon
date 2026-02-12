@@ -3,7 +3,7 @@
 **Canon Version:** 1.0  
 **Status:** Stable  
 **Category:** Components  
-**Enforcement:** Documentation
+**Enforcement:** ESLint (`gallop/no-inline-svg`)
 
 ## Decision
 
@@ -110,8 +110,9 @@ import { ArrowRight } from 'react-icons/hi'
 
 ## Enforcement
 
-- **Method:** Code review / Documentation
-- **Future:** ESLint rule to detect inline SVGs
+- **ESLint Rule:** `gallop/no-inline-svg`
+- Flags `<svg>` elements in block files
+- Use the Icon component with Iconify icons instead
 
 ## References
 

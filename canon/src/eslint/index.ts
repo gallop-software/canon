@@ -4,6 +4,7 @@ import preferComponentProps from './rules/prefer-component-props.js'
 import preferTypographyComponents from './rules/prefer-typography-components.js'
 import preferLayoutComponents from './rules/prefer-layout-components.js'
 import noArbitraryColors from './rules/no-arbitrary-colors.js'
+import noRawColors from './rules/no-raw-colors.js'
 import noCrossZoneImports from './rules/no-cross-zone-imports.js'
 import noNativeIntersectionObserver from './rules/no-native-intersection-observer.js'
 import noComponentInBlocks from './rules/no-component-in-blocks.js'
@@ -11,6 +12,9 @@ import preferListComponents from './rules/prefer-list-components.js'
 import noNativeDate from './rules/no-native-date.js'
 import blockNamingConvention from './rules/block-naming-convention.js'
 import requireCanonSetup from './rules/require-canon-setup.js'
+import noClassnamesPackage from './rules/no-classnames-package.js'
+import preferAliasImports from './rules/prefer-alias-imports.js'
+import noInlineSvg from './rules/no-inline-svg.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -23,12 +27,16 @@ const recommended = {
   'gallop/prefer-typography-components': 'warn',
   'gallop/prefer-layout-components': 'warn',
   'gallop/no-arbitrary-colors': 'warn',
+  'gallop/no-raw-colors': 'warn',
   'gallop/no-cross-zone-imports': 'warn',
   'gallop/no-native-intersection-observer': 'warn',
   'gallop/no-component-in-blocks': 'warn',
   'gallop/prefer-list-components': 'warn',
   'gallop/no-native-date': 'warn',
   'gallop/require-canon-setup': 'warn',
+  'gallop/no-classnames-package': 'warn',
+  'gallop/prefer-alias-imports': 'warn',
+  'gallop/no-inline-svg': 'warn',
 } as const
 
 const plugin = {
@@ -44,12 +52,16 @@ const plugin = {
     'prefer-typography-components': preferTypographyComponents,
     'prefer-layout-components': preferLayoutComponents,
     'no-arbitrary-colors': noArbitraryColors,
+    'no-raw-colors': noRawColors,
     'no-cross-zone-imports': noCrossZoneImports,
     'no-native-intersection-observer': noNativeIntersectionObserver,
     'no-component-in-blocks': noComponentInBlocks,
     'prefer-list-components': preferListComponents,
     'no-native-date': noNativeDate,
     'require-canon-setup': requireCanonSetup,
+    'no-classnames-package': noClassnamesPackage,
+    'prefer-alias-imports': preferAliasImports,
+    'no-inline-svg': noInlineSvg,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config

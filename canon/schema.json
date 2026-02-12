@@ -107,8 +107,8 @@
       "file": "patterns/007-import-paths.md",
       "category": "structure",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/prefer-alias-imports",
       "summary": "@/ aliases, direct file imports"
     },
     {
@@ -127,8 +127,8 @@
       "file": "patterns/009-color-tokens.md",
       "category": "styling",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/no-raw-colors",
       "summary": "Use semantic color tokens"
     },
     {
@@ -157,8 +157,8 @@
       "file": "patterns/012-icon-system.md",
       "category": "components",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/no-inline-svg",
       "summary": "Iconify with Icon component"
     },
     {
@@ -177,8 +177,8 @@
       "file": "patterns/014-clsx-not-classnames.md",
       "category": "styling",
       "status": "stable",
-      "enforcement": "documentation",
-      "rule": null,
+      "enforcement": "eslint",
+      "rule": "gallop/no-classnames-package",
       "summary": "Use clsx, never classnames package"
     },
     {

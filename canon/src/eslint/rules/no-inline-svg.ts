@@ -1,20 +1,19 @@
 import type { Rule } from 'eslint'
 import { getCanonUrl, getCanonPattern } from '../utils/canon.js'
 
-const RULE_NAME = 'prefer-list-components'
+const RULE_NAME = 'no-inline-svg'
 const pattern = getCanonPattern(RULE_NAME)
 
 const rule: Rule.RuleModule = {
   meta: {
     type: 'suggestion',
     docs: {
-      description: pattern?.summary || 'Use List/Li, not raw ul/li tags',
+      description: pattern?.summary || 'Use Icon component instead of inline SVGs',
       recommended: true,
       url: getCanonUrl(RULE_NAME),
     },
     messages: {
-      useList: `[Canon ${pattern?.id || '026'}] Use the List component instead of <ul>. Import: import { List } from "@/components/list"`,
-      useLi: `[Canon ${pattern?.id || '026'}] Use the Li component instead of <li>. Import: import { Li } from "@/components/list"`,
+      noInlineSvg: `[Canon ${pattern?.id || '012'}] Use the Icon component with Iconify icons instead of inline <svg>. Import: import { Icon } from "@/components/icon"`,
     },
     schema: [],
   },
@@ -31,22 +30,11 @@ const rule: Rule.RuleModule = {
       JSXOpeningElement(node: any) {
         const elementName = node.name?.name
 
-        // Check <ul> and <ol> tags
-        if (elementName === 'ul' || elementName === 'ol') {
+        if (elementName === 'svg') {
           context.report({
             node,
-            messageId: 'useList',
+            messageId: 'noInlineSvg',
           })
-          return
-        }
-
-        // Check <li> tags
-        if (elementName === 'li') {
-          context.report({
-            node,
-            messageId: 'useLi',
-          })
-          return
         }
       },
     }

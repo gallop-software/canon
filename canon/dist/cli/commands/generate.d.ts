@@ -1,6 +1,7 @@
+type OutputFormat = 'cursorrules' | 'claude' | 'copilot';
 interface GenerateOptions {
     output: string;
-    format: 'cursorrules' | 'markdown';
+    format: OutputFormat;
 }
 export declare function generate(options: GenerateOptions): Promise<void>;
 export {};

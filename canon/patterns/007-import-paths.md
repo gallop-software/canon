@@ -3,7 +3,7 @@
 **Canon Version:** 1.0  
 **Status:** Stable  
 **Category:** Structure  
-**Enforcement:** Documentation
+**Enforcement:** ESLint (`gallop/prefer-alias-imports`)
 
 ## Decision
 
@@ -132,8 +132,9 @@ Barrel exports (`src/components/index.ts`) were previously used but removed beca
 
 ## Enforcement
 
-- **Method:** Code review / ESLint import rules
-- **Future:** Custom ESLint rule for path validation
+- **ESLint Rule:** `gallop/prefer-alias-imports`
+- Flags relative imports with 2+ `../` segments targeting Canon zones
+- Same-directory `./` imports are allowed
 
 ## References
 

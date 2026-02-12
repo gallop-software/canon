@@ -13,6 +13,7 @@ const rule: Rule.RuleModule = {
       url: getCanonUrl(RULE_NAME),
     },
     messages: {
+      useHeading: `[Canon ${pattern?.id || '003'}] Use the Heading component instead of <{{tag}}>. Import: import { Heading } from "@/components/heading"`,
       useParagraph: `[Canon ${pattern?.id || '003'}] Use the Paragraph component instead of <p>. Import: import { Paragraph } from "@/components/paragraph"`,
       useSpan: `[Canon ${pattern?.id || '003'}] Use the Span component instead of <span> for text content. Import: import { Span } from "@/components/span"`,
       useQuote: `[Canon ${pattern?.id || '003'}] Use the Quote component instead of <blockquote>. Import: import { Quote } from "@/components/quote"`,
@@ -102,6 +103,12 @@ const rule: Rule.RuleModule = {
     return {
       JSXOpeningElement(node: any) {
         const elementName = node.name?.name
+
+        // Check <h1>–<h6> tags
+        if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(elementName)) {
+          context.report({ node, messageId: 'useHeading', data: { tag: elementName } })
+          return
+        }
 
         // Check <p> tags
         if (elementName === 'p') {

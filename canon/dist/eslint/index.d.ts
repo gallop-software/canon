@@ -21,6 +21,7 @@ declare const plugin: {
         'no-arbitrary-colors': import("@typescript-eslint/utils/ts-eslint").RuleModule<"noArbitraryColors", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
+        'no-raw-colors': import("eslint").Rule.RuleModule;
         'no-cross-zone-imports': import("@typescript-eslint/utils/ts-eslint").RuleModule<"blocksImportBlocks" | "componentsImportBlocks" | "runtimeImportScripts", [], unknown, import("@typescript-eslint/utils/ts-eslint").RuleListener> & {
             name: string;
         };
@@ -29,6 +30,9 @@ declare const plugin: {
         'prefer-list-components': import("eslint").Rule.RuleModule;
         'no-native-date': import("eslint").Rule.RuleModule;
         'require-canon-setup': import("eslint").Rule.RuleModule;
+        'no-classnames-package': import("eslint").Rule.RuleModule;
+        'prefer-alias-imports': import("eslint").Rule.RuleModule;
+        'no-inline-svg': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -42,12 +46,16 @@ declare const plugin: {
         readonly 'gallop/prefer-typography-components': "warn";
         readonly 'gallop/prefer-layout-components': "warn";
         readonly 'gallop/no-arbitrary-colors': "warn";
+        readonly 'gallop/no-raw-colors': "warn";
         readonly 'gallop/no-cross-zone-imports': "warn";
         readonly 'gallop/no-native-intersection-observer': "warn";
         readonly 'gallop/no-component-in-blocks': "warn";
         readonly 'gallop/prefer-list-components': "warn";
         readonly 'gallop/no-native-date': "warn";
         readonly 'gallop/require-canon-setup': "warn";
+        readonly 'gallop/no-classnames-package': "warn";
+        readonly 'gallop/prefer-alias-imports': "warn";
+        readonly 'gallop/no-inline-svg': "warn";
     };
 };
 export default plugin;

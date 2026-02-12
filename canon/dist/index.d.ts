@@ -4,6 +4,7 @@
  * Gallop Canon
  * Versioned, AI-compatible, auditable web architecture patterns
  */
+export type { CanonTemplateConfig } from './types/config.js';
 export interface Pattern {
     id: string;
     title: string;

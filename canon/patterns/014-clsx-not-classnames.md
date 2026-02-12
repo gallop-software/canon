@@ -3,7 +3,7 @@
 **Canon Version:** 1.0  
 **Status:** Stable  
 **Category:** Styling  
-**Enforcement:** Documentation
+**Enforcement:** ESLint (`gallop/no-classnames-package`)
 
 ## Decision
 
@@ -119,8 +119,8 @@ The API is identical — just change the import.
 
 ## Enforcement
 
-- **Method:** Code review / package.json audit
-- **Check:** `classnames` should not appear in dependencies
+- **ESLint Rule:** `gallop/no-classnames-package`
+- Flags `import` or `require()` of `classnames`, `classnames/bind`, or `classnames/dedupe`
 
 ## References
 

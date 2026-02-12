@@ -3,7 +3,7 @@
 **Canon Version:** 1.0  
 **Status:** Stable  
 **Category:** Styling  
-**Enforcement:** Documentation
+**Enforcement:** ESLint (`gallop/no-raw-colors`)
 
 ## Decision
 
@@ -105,8 +105,9 @@ Raw Tailwind colors are acceptable for:
 
 ## Enforcement
 
-- **Method:** Code review / Documentation
-- **Future:** ESLint rule to prefer tokens
+- **ESLint Rule:** `gallop/no-raw-colors`
+- Flags raw Tailwind color classes (e.g. `text-white`, `bg-gray-500`)
+- Accepts `allowedClasses` option for escape hatches (brand colors, etc.)
 
 ## References
 

@@ -1,6 +1,6 @@
 {
   "name": "@gallop.software/canon",
-  "version": "2.26.0",
+  "version": "2.29.0",
   "type": "module",
   "description": "Gallop Canon - Architecture patterns, ESLint plugin, and CLI for template governance",
   "main": "dist/index.js",
@@ -13,6 +13,10 @@
     "./eslint": {
       "types": "./dist/eslint/index.d.ts",
       "import": "./dist/eslint/index.js"
+    },
+    "./config": {
+      "types": "./dist/types/config.d.ts",
+      "import": "./dist/types/config.js"
     }
   },
   "bin": {

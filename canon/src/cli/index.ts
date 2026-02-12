@@ -30,7 +30,7 @@ ${colors.bold}Usage:${colors.reset}
 
 ${colors.bold}Commands:${colors.reset}
   audit [path]       Check Canon compliance (default: src/blocks/)
-  generate [output]  Generate AI rules from Canon (default: .cursorrules)
+  generate [output]  Generate AI rules from Canon
   version            Show version information
   help               Show this help message
 
@@ -39,13 +39,18 @@ ${colors.bold}Audit Options:${colors.reset}
   --json             Output as JSON
 
 ${colors.bold}Generate Options:${colors.reset}
-  --output, -o       Output file path (default: .cursorrules)
+  gallop generate                  Generate all files (.cursorrules, CLAUDE.md, copilot-instructions.md)
+  gallop generate .cursorrules     Generate .cursorrules only
+  gallop generate CLAUDE.md        Generate CLAUDE.md only
+  gallop generate .github/copilot-instructions.md
+  --output, -o       Output file path
 
 ${colors.bold}Examples:${colors.reset}
   gallop audit
   gallop audit src/blocks/ --strict
   gallop generate
   gallop generate .cursorrules
+  gallop generate CLAUDE.md
   gallop generate --output .github/copilot-instructions.md
 `)
 }
@@ -53,6 +58,16 @@ ${colors.bold}Examples:${colors.reset}
 function showVersion() {
   console.log(`Gallop CLI v1.0.0`)
   console.log(`Canon v${version}`)
+}
+
+/**
+ * Detect output format from filename
+ */
+function detectFormat(filename: string): 'cursorrules' | 'claude' | 'copilot' {
+  const lower = filename.toLowerCase()
+  if (lower.endsWith('claude.md')) return 'claude'
+  if (lower.endsWith('copilot-instructions.md')) return 'copilot'
+  return 'cursorrules'
 }
 
 async function main() {
@@ -68,11 +83,12 @@ async function main() {
       await audit(auditPath, auditOptions)
       break
 
-    case 'generate':
+    case 'generate': {
       // Find output path from args
-      let outputPath = '.cursorrules'
       const outputIndex = args.indexOf('--output')
       const outputIndexShort = args.indexOf('-o')
+      let outputPath: string | null = null
+
       if (outputIndex !== -1 && args[outputIndex + 1]) {
         outputPath = args[outputIndex + 1]
       } else if (outputIndexShort !== -1 && args[outputIndexShort + 1]) {
@@ -80,12 +96,22 @@ async function main() {
       } else if (args[1] && !args[1].startsWith('--')) {
         outputPath = args[1]
       }
-      const generateOptions = {
-        output: outputPath,
-        format: 'cursorrules' as const,
+
+      if (outputPath) {
+        // Single-file generation
+        await generate({
+          output: outputPath,
+          format: detectFormat(outputPath),
+        })
+      } else {
+        // No args → generate all files
+        await generate({
+          output: 'all',
+          format: 'cursorrules', // unused when output is 'all'
+        })
       }
-      await generate(generateOptions)
       break
+    }
 
     case 'version':
     case '-v':
