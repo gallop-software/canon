@@ -13,10 +13,6 @@
     "./eslint": {
       "types": "./dist/eslint/index.d.ts",
       "import": "./dist/eslint/index.js"
-    },
-    "./config": {
-      "types": "./dist/types/config.d.ts",
-      "import": "./dist/types/config.js"
     }
   },
   "bin": {

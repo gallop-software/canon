@@ -85,15 +85,6 @@ rules: {
 
 ## CLI Commands
 
-### Generate AI Rules
-
-Generate `.cursorrules` or Copilot instructions from Canon:
-
-```bash
-npx gallop generate .cursorrules
-npx gallop generate .github/copilot-instructions.md
-```
-
 ### Audit Code
 
 Check code compliance:

@@ -7,9 +7,6 @@
 
 import schema from '../schema.json' with { type: 'json' }
 
-// Template config type
-export type { CanonTemplateConfig } from './types/config.js'
-
 // Types
 export interface Pattern {
   id: string

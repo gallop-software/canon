@@ -46,14 +46,6 @@ const REQUIRED_SCRIPTS: Record<string, { contains: string; definition: string }>
     contains: 'gallop audit',
     definition: '"audit:json": "gallop audit --json"',
   },
-  'generate:ai-rules': {
-    contains: 'gallop generate',
-    definition: '"generate:ai-rules": "gallop generate .cursorrules && gallop generate .github/copilot-instructions.md"',
-  },
-  'update:canon': {
-    contains: '@gallop.software/canon',
-    definition: '"update:canon": "npm update @gallop.software/canon"',
-  },
 }
 
 const rule: Rule.RuleModule = {
