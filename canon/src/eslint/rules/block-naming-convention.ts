@@ -9,6 +9,14 @@ const createRule = ESLintUtils.RuleCreator(() => getCanonUrl(RULE_NAME))
 type MessageIds = 'blockNamingMismatch' | 'blockNamingNoNumber'
 
 /**
+ * Check if file is in a co-located _blocks/ directory (new structure)
+ * In _blocks/, files like hero.tsx (no number) are valid
+ */
+function isColocatedBlock(filename: string): boolean {
+  return filename.includes('/_blocks/') || filename.includes('\\_blocks\\')
+}
+
+/**
  * Converts a block filename to its expected PascalCase export name
  * e.g., "hero-5" -> "Hero5", "section-10" -> "Section10", "content-39" -> "Content39"
  */
@@ -63,8 +71,10 @@ export default createRule<[], MessageIds>({
   create(context) {
     const filename = context.filename || context.getFilename()
 
-    // Only check files in src/blocks/
-    if (!filename.includes('/blocks/') && !filename.includes('\\blocks\\')) {
+    // Only check files in src/blocks/ or _blocks/
+    const isBlockFile = filename.includes('/blocks/') || filename.includes('/_blocks/') ||
+                        filename.includes('\\blocks\\') || filename.includes('\\_blocks\\')
+    if (!isBlockFile) {
       return {}
     }
 
@@ -84,8 +94,9 @@ export default createRule<[], MessageIds>({
           const actualName = node.declaration.id.name
           
           if (actualName !== expectedName) {
-            // Check if the export name has a trailing number
-            if (!hasTrailingNumber(actualName)) {
+            // In co-located _blocks/, names without numbers are valid
+            // Only flag missing numbers in the legacy src/blocks/ directory
+            if (!hasTrailingNumber(actualName) && !isColocatedBlock(filename)) {
               // No number - suggest adding one
               const suggestedFilename = pascalCaseToFilename(actualName)
               context.report({
@@ -97,7 +108,7 @@ export default createRule<[], MessageIds>({
                   suggestedFilename,
                 },
               })
-            } else {
+            } else if (actualName !== expectedName) {
               // Has number but doesn't match filename
               const suggestedFilename = pascalCaseToFilename(actualName)
               context.report({

@@ -22,14 +22,14 @@ Page files follow a consistent structure using `PageWrapper` and `generatePageMe
 import { PageWrapper } from '@/components/page-wrapper'
 import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 
-import Hero1 from '@/blocks/hero-1'
-import Section1 from '@/blocks/section-1'
+import Hero from './_blocks/hero'
+import Services from './_blocks/services'
 
 function Content() {
   return (
     <>
-      <Hero1 />
-      <Section1 />
+      <Hero />
+      <Services />
     </>
   )
 }

@@ -19,7 +19,8 @@ const rule: Rule.RuleModule = {
     const filename = context.filename || context.getFilename()
 
     // Only check block files
-    const isBlock = filename.includes('/blocks/') || filename.includes('\\blocks\\')
+    const isBlock = filename.includes('/blocks/') || filename.includes('/_blocks/') ||
+                    filename.includes('\\blocks\\') || filename.includes('\\_blocks\\')
     if (!isBlock) {
       return {}
     }

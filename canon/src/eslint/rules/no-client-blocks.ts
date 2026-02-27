@@ -24,8 +24,10 @@ export default createRule<[], MessageIds>({
   create(context) {
     const filename = context.filename || context.getFilename()
 
-    // Only check files in src/blocks/
-    if (!filename.includes('/blocks/') && !filename.includes('\\blocks\\')) {
+    // Only check files in src/blocks/ or _blocks/
+    const isBlockFile = filename.includes('/blocks/') || filename.includes('/_blocks/') ||
+                        filename.includes('\\blocks\\') || filename.includes('\\_blocks\\')
+    if (!isBlockFile) {
       return {}
     }
 

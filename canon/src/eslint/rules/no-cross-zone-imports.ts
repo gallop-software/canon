@@ -12,7 +12,8 @@ type MessageIds = 'blocksImportBlocks' | 'componentsImportBlocks' | 'runtimeImpo
  * Determine which zone a file is in based on its path
  */
 function getZone(filename: string): string | null {
-  if (filename.includes('/blocks/') || filename.includes('\\blocks\\')) {
+  if (filename.includes('/blocks/') || filename.includes('/_blocks/') ||
+      filename.includes('\\blocks\\') || filename.includes('\\_blocks\\')) {
     return 'blocks'
   }
   if (filename.includes('/components/') || filename.includes('\\components\\')) {
@@ -41,7 +42,11 @@ function importsZone(importPath: string, zone: string): boolean {
   if (importPath.startsWith('@/')) {
     return importPath.startsWith(`@/${zone}/`)
   }
-  // Handle relative imports
+  // Handle relative imports (including _blocks/ as blocks zone)
+  if (zone === 'blocks') {
+    return importPath.includes(`/${zone}/`) || importPath.includes(`/_blocks/`) ||
+           importPath.includes(`\\${zone}\\`) || importPath.includes(`\\_blocks\\`)
+  }
   return importPath.includes(`/${zone}/`) || importPath.includes(`\\${zone}\\`)
 }
 

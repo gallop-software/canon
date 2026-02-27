@@ -42,7 +42,7 @@ const recommended = {
 const plugin = {
   meta: {
     name: 'eslint-plugin-gallop',
-    version: '2.12.0',
+    version: '2.31.0',
   },
   rules: {
     'no-client-blocks': noClientBlocks,

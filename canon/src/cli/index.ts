@@ -29,7 +29,7 @@ ${colors.bold}Usage:${colors.reset}
   gallop <command> [options]
 
 ${colors.bold}Commands:${colors.reset}
-  audit [path]       Check Canon compliance (default: src/blocks/)
+  audit [path]       Check Canon compliance (default: src/)
   generate [output]  Generate AI rules from Canon
   version            Show version information
   help               Show this help message
@@ -74,7 +74,7 @@ async function main() {
   switch (command) {
     case 'audit':
       const auditPath =
-        args[1] && !args[1].startsWith('--') ? args[1] : 'src/blocks/'
+        args[1] && !args[1].startsWith('--') ? args[1] : 'src/'
       const auditOptions = {
         strict: args.includes('--strict'),
         json: args.includes('--json'),

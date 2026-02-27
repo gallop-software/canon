@@ -28,7 +28,7 @@ import gallop from '@gallop.software/canon/eslint'
 export default [
   ...nextConfig,
   {
-    files: ['src/blocks/**/*.tsx', 'src/components/**/*.tsx'],
+    files: ['src/app/**/_blocks/**/*.tsx', 'src/components/**/*.tsx'],
     plugins: {
       gallop,
     },
@@ -66,15 +66,22 @@ rules: {
 | Rule | Description |
 |------|-------------|
 | `gallop/no-client-blocks` | Blocks must be server components |
+| `gallop/block-naming-convention` | Block export names must match filename |
 | `gallop/no-container-in-section` | No Container inside Section |
 | `gallop/prefer-component-props` | Use props over className for styles |
 | `gallop/prefer-typography-components` | Use Paragraph/Span, not raw tags |
 | `gallop/prefer-layout-components` | Use Grid/Columns, not raw div |
-| `gallop/background-image-rounded` | Background images need rounded prop |
-| `gallop/no-inline-styles` | No style attribute, use Tailwind |
 | `gallop/no-arbitrary-colors` | Use color tokens, not arbitrary values |
+| `gallop/no-raw-colors` | Use semantic color tokens |
 | `gallop/no-cross-zone-imports` | Enforce import boundaries |
-| `gallop/no-data-imports` | No direct _data/ imports in runtime |
+| `gallop/no-native-intersection-observer` | Use react-intersection-observer |
+| `gallop/no-component-in-blocks` | Exported components belong in /components |
+| `gallop/prefer-list-components` | Use List/Li, not raw ul/li |
+| `gallop/no-native-date` | Use Luxon, not native Date |
+| `gallop/require-canon-setup` | Validate Canon ESLint configuration |
+| `gallop/no-classnames-package` | Use clsx, not classnames |
+| `gallop/prefer-alias-imports` | Use @/ aliases for imports |
+| `gallop/no-inline-svg` | Use Icon component, not inline SVG |
 
 ## CLI Commands
 
@@ -87,22 +94,13 @@ npx gallop generate .cursorrules
 npx gallop generate .github/copilot-instructions.md
 ```
 
-### Validate Project Structure
-
-Check folder structure compliance:
-
-```bash
-npx gallop validate
-npx gallop validate --strict  # Exit code 1 on violations
-```
-
 ### Audit Code
 
 Check code compliance:
 
 ```bash
 npx gallop audit
-npx gallop audit src/blocks/ --strict
+npx gallop audit src/ --strict
 ```
 
 ## Pattern Categories

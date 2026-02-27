@@ -99,7 +99,7 @@
       "status": "stable",
       "enforcement": "eslint",
       "rule": "gallop/block-naming-convention",
-      "summary": "{type}-{n}.tsx naming, PascalCase exports"
+      "summary": "Descriptive kebab-case naming, PascalCase exports"
     },
     {
       "id": "007",
