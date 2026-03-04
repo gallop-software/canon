@@ -26,10 +26,6 @@ const REQUIRED_SCRIPTS: Record<string, { contains: string; definition: string }>
     contains: 'eslint',
     definition: '"lint": "eslint src/"',
   },
-  'lint:gallop': {
-    contains: 'eslint',
-    definition: `"lint:gallop": "eslint 'src/app/**/_blocks/' --rule 'gallop/no-client-blocks: warn' --rule 'gallop/no-container-in-section: warn' --rule 'gallop/prefer-component-props: warn'"`,
-  },
   ts: {
     contains: 'tsc',
     definition: '"ts": "tsc --noEmit"',
