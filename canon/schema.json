@@ -300,6 +300,16 @@
       "enforcement": "eslint",
       "rule": "gallop/no-native-date",
       "summary": "Use Luxon DateTime, not native JavaScript Date"
+    },
+    {
+      "id": "028",
+      "title": "Custom Image Component",
+      "file": "patterns/028-custom-image-component.md",
+      "category": "components",
+      "status": "stable",
+      "enforcement": "eslint",
+      "rule": "gallop/no-next-image",
+      "summary": "Use custom Image component, not next/image"
     }
   ],
   "guarantees": [

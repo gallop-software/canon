@@ -15,6 +15,7 @@ import requireCanonSetup from './rules/require-canon-setup.js'
 import noClassnamesPackage from './rules/no-classnames-package.js'
 import preferAliasImports from './rules/prefer-alias-imports.js'
 import noInlineSvg from './rules/no-inline-svg.js'
+import noNextImage from './rules/no-next-image.js'
 
 /**
  * All Canon ESLint rules with recommended severity levels
@@ -37,6 +38,7 @@ const recommended = {
   'gallop/no-classnames-package': 'warn',
   'gallop/prefer-alias-imports': 'warn',
   'gallop/no-inline-svg': 'warn',
+  'gallop/no-next-image': 'warn',
 } as const
 
 const plugin = {
@@ -62,6 +64,7 @@ const plugin = {
     'no-classnames-package': noClassnamesPackage,
     'prefer-alias-imports': preferAliasImports,
     'no-inline-svg': noInlineSvg,
+    'no-next-image': noNextImage,
   },
   /**
    * Recommended rule configurations - spread into your ESLint config

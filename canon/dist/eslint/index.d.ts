@@ -33,6 +33,7 @@ declare const plugin: {
         'no-classnames-package': import("eslint").Rule.RuleModule;
         'prefer-alias-imports': import("eslint").Rule.RuleModule;
         'no-inline-svg': import("eslint").Rule.RuleModule;
+        'no-next-image': import("eslint").Rule.RuleModule;
     };
     /**
      * Recommended rule configurations - spread into your ESLint config
@@ -56,6 +57,7 @@ declare const plugin: {
         readonly 'gallop/no-classnames-package': "warn";
         readonly 'gallop/prefer-alias-imports': "warn";
         readonly 'gallop/no-inline-svg': "warn";
+        readonly 'gallop/no-next-image': "warn";
     };
 };
 export default plugin;
